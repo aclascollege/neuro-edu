@@ -244,10 +244,87 @@ function moodToHex(mood) {
     return { Excited: '#00f2ff', Focused: '#00ff88', Confused: '#ff3366' }[mood] || '#555555';
 }
 
+// ── Mock Engine for Static Hosting (GitHub Pages) ─────────────
+class MockEngine {
+    constructor() {
+        this.tick = 42;
+        this.agents = this.generateAgents(20);
+        this.loss_curve = Array.from({length: 20}, (_, i) => 0.5 * Math.pow(0.9, i) + Math.random() * 0.05);
+        this.graph = {
+            nodes: [
+                {id: 'a', label: 'Neural Kernels', count: 5},
+                {id: 'b', label: 'Backprop', count: 3},
+                {id: 'c', label: 'Entropy', count: 4},
+                {id: 'd', label: 'Cognition', count: 6}
+            ],
+            edges: [
+                {source: 'a', target: 'b', weight: 0.8},
+                {source: 'b', target: 'c', weight: 0.5},
+                {source: 'c', target: 'd', weight: 0.9},
+                {source: 'd', target: 'a', weight: 0.4}
+            ]
+        };
+    }
+
+    generateAgents(count) {
+        const names = ["Aura", "Bohr", "Cyra", "Dion", "Echo", "Flux", "Gaia", "Heli", "Iris", "Juno", "Kael", "Lumi", "Mira", "Nova", "Orin", "Puma", "Quix", "Rune", "Sol", "Tera"];
+        const moods = ["Excited", "Focused", "Confused", "Neutral"];
+        return Array.from({length: count}, (_, i) => ({
+            id: i,
+            name: names[i % names.length] + "-" + (100 + i),
+            profile: "Standard",
+            mood: moods[Math.floor(Math.random() * moods.length)],
+            attention: 0.4 + Math.random() * 0.6,
+            fatigue: Math.random() * 0.3,
+            prob: Math.random(),
+            thought: "Analyzing semantic convergence in latent space layer " + Math.floor(Math.random()*3),
+            skills: { logic: Math.random(), math: Math.random(), language: Math.random(), memory: Math.random(), creative: Math.random() },
+            knowledge_count: Math.floor(Math.random() * 50),
+            loss_curve: Array.from({length: 10}, () => Math.random() * 0.1)
+        }));
+    }
+
+    getMetrics() {
+        return {
+            gpa: 3.2 + Math.random() * 0.6,
+            cas: 0.8542 + Math.random() * 0.05,
+            retention_rate: 0.92,
+            loss_curve: this.loss_curve,
+            mood_distribution: { Excited: 5, Focused: 8, Confused: 3, Neutral: 4 },
+            skill_distribution: { logic: 0.72, math: 0.65, language: 0.78, memory: 0.82, creative: 0.61 },
+            dropout_risk: this.agents.slice(0, 3).map(a => ({ name: a.name, risk: Math.random() * 0.4 }))
+        };
+    }
+}
+
+const mock = new MockEngine();
+const isStatic = window.location.hostname.includes('github.io') || window.location.hostname === '';
+
 // ── API ───────────────────────────────────────────────────────
 async function api(path, opts = {}) {
-    const r = await fetch(path, opts);
-    return r.json();
+    if (isStatic) {
+        console.log(`[Static Mode] Intercepted ${path}`);
+        return handleMockApi(path, opts);
+    }
+    try {
+        const r = await fetch(path, opts);
+        if (!r.ok) throw new Error('API Error');
+        return r.json();
+    } catch (e) {
+        console.warn(`API failed (${path}), falling back to mock data.`);
+        return handleMockApi(path, opts);
+    }
+}
+
+function handleMockApi(path, opts) {
+    if (path.includes('/api/status')) return { tick: mock.tick++, agents: mock.agents };
+    if (path.includes('/api/metrics')) return mock.getMetrics();
+    if (path.includes('/api/graph')) return mock.graph;
+    if (path.includes('/api/architecture')) return { architecture: [6, 12, 6], total_params: 156, optimizer: "AdamW", loss_fn: "MSE" };
+    if (path.includes('/api/teach')) return { status: "broadcast_complete", agents_reached: 20 };
+    if (path.includes('/api/train')) return { samples_per_agent: 15, epoch_losses: [0.123, 0.098, 0.076, 0.054, 0.042] };
+    if (path.includes('/api/reset')) { mock.tick = 0; return { status: "reset" }; }
+    return {};
 }
 
 async function fetchAndRenderGraph() {
