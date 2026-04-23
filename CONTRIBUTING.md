@@ -34,7 +34,7 @@ pytest tests/
 
 ## Community
 
-Join our discussions at [aclas.college/community](https://aclas.college/community).
+Join our discussions at [aclas.college/community](https://aclas.college/admissions/alumni-network).
 
 ---
 

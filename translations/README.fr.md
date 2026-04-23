@@ -11,8 +11,8 @@
 ---
 
 **[🌐 Site Web](https://aclas.college)** &nbsp;|&nbsp;
-**[📚 Cours](https://aclas.college/courses)** &nbsp;|&nbsp;
-**[🎓 Certifications](https://aclas.college/certification)**
+**[📚 Cours](https://aclas.college/home/courses)** &nbsp;|&nbsp;
+**[🎓 Certifications](https://aclas.college/verify/certificate-verify)**
 
 </div>
 
@@ -33,10 +33,10 @@
 
 ---
 
-## 🏗️ Mission et Vision
+## 🏗�?Mission et Vision
 
 > *"Chaque esprit, quels que soient son origine ou ses moyens, mérite un apprentissage de classe mondiale."*
-> — [Mission & Vision ACLAS](https://aclas.college/explore/mission-and-vision)
+> �?[Mission & Vision ACLAS](https://aclas.college/explore/mission-and-vision)
 
 ---
 

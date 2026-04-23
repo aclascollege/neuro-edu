@@ -34,9 +34,9 @@
 ---
 
 **[🌐 Website](https://aclas.college)** &nbsp;|&nbsp;
-**[📚 Courses](https://aclas.college/courses)** &nbsp;|&nbsp;
-**[🎓 Certifications](https://aclas.college/certification)** &nbsp;|&nbsp;
-**[💬 Community](https://aclas.college/community)** &nbsp;|&nbsp;
+**[📚 Courses](https://aclas.college/home/courses)** &nbsp;|&nbsp;
+**[🎓 Certifications](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
+**[💬 Community](https://aclas.college/admissions/alumni-network)** &nbsp;|&nbsp;
 **[📄 Docs](#documentation)**
 
 </div>
@@ -329,12 +329,12 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 | Resource | Link |
 |----------|------|
 | 🌐 Official Website | [aclas.college](https://aclas.college) |
-| 📚 Online Courses | [aclas.college/courses](https://aclas.college/courses) |
-| 🏆 Certifications | [aclas.college/certification](https://aclas.college/certification) |
-| 🎓 Academic Programs | [aclas.college/programs](https://aclas.college/programs) |
-| 📰 Research & News | [aclas.college/news](https://aclas.college/news) |
-| 💼 Careers | [aclas.college/careers](https://aclas.college/careers) |
-| 📩 Contact | [aclas.college/contact](https://aclas.college/contact) |
+| 📚 Online Courses | [aclas.college/courses](https://aclas.college/home/courses) |
+| 🏆 Certifications | [aclas.college/certification](https://aclas.college/verify/certificate-verify) |
+| 🎓 Academic Programs | [aclas.college/programs](https://aclas.college/home/courses) |
+| 📰 Research & News | [aclas.college/news](https://aclas.college/blogs) |
+| 💼 Careers | [aclas.college/careers](https://aclas.college/admissions/careers) |
+| 📩 Contact | [aclas.college/contact](https://aclas.college/home/contact-us) |
 
 ### 📱 Follow ACLAS
 
@@ -379,7 +379,7 @@ You are free to use, modify, and distribute this software for any purpose, inclu
 
 *Advancing human potential through AI-powered education*
 
-[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/certification) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
+[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/home/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/verify/certificate-verify) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
 
 <sub>© 2026 Atlanta College of Liberal Arts and Sciences. Open-sourced under MIT License. &nbsp;·&nbsp; <a href="https://aclas.college/policy/terms-and-condition">Terms</a> &nbsp;·&nbsp; <a href="https://aclas.college/policy/privacy-policy">Privacy</a> &nbsp;·&nbsp; <a href="https://aclas.college/home/sitemap">Sitemap</a></sub>
 
