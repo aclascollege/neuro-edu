@@ -29,7 +29,7 @@
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
 [![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
 [![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
-[![X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
+[![Twitter/X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
 
 ---
 
@@ -45,60 +45,81 @@
 
 ## 🌌 What is ACLAS Neuro-Edu?
 
-**ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis** �?all without relying on any external AI APIs.
+**ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis** — all without relying on any external AI APIs.
 
 > *"We don't wrap GPT. We model cognition from first principles."*
 
-This project serves as ACLAS's technical showcase, demonstrating that a modern education institution can build and publish **genuinely hardcore AI tooling** �?not just course content.
+This project serves as ACLAS's technical showcase, demonstrating that a modern education institution can build and publish **genuinely hardcore AI tooling** — not just course content.
 
 ### Why does this exist?
 
-At [ACLAS](https://aclas.college), we believe the future of education is deeply intertwined with AI. This framework is our commitment to that belief �?a live, open, runnable proof that AI and pedagogy can be unified at the systems level.
+At [ACLAS](https://aclas.college), we believe the future of education is deeply intertwined with AI. This framework is our commitment to that belief — a live, open, runnable proof that AI and pedagogy can be unified at the systems level.
 
 ---
 
-## �?Key Features
+## ✨ Key Features
 
 | Feature | Description |
 |---|---|
-| 🧠 **On-Device Neural Kernel** | Pure NumPy MLP with real backpropagation (He init, ReLU, Sigmoid, SGD) �?no cloud inference |
+| 🧠 **On-Device Neural Kernel** | Pure NumPy MLP with real backpropagation (He init, ReLU, Sigmoid, SGD) — no cloud inference |
 | 📡 **Multi-Agent Social Learning** | 20+ autonomous agents exchange knowledge via a real-time message bus |
 | 📊 **Cognitive Entropy Analytics** | Thermodynamic-inspired classroom entropy tracking (Shannon H, MSE loss curves) |
 | 🎯 **5-Dim Skill Matrix** | Agents have Logic / Math / Language / Memory / Creative skill profiles |
-| 🔁 **Federated Training** | Each agent trains its own MLP on a shared dataset �?real epoch losses, real descent |
+| 🔁 **Federated Training** | Each agent trains its own MLP on a shared dataset — real epoch losses, real descent |
 | 🌐 **3D Neural Nebula** | WebGL (Three.js) visualization of agent states in latent space |
 | 📈 **Advanced Scoring** | GPA (4.0), CAS Score, Retention Rate, Shannon Diversity Index, Dropout Risk |
-| 🕸�?**Knowledge Graph** | D3.js-powered live concept relation map built from agent learning events |
-| 🖥�?**CLI Tool** | `python cli.py simulate / train / report` �?fully scriptable |
-| �?**26 pytest Tests** | Industrial-grade test coverage across model, agent, and engine layers |
+| 🕸️ **Knowledge Graph** | D3.js-powered live concept relation map built from agent learning events |
+| 🖥️ **CLI Tool** | `python cli.py simulate / train / report` — fully scriptable |
+| ✅ **26 pytest Tests** | Industrial-grade test coverage across model, agent, and engine layers |
 
 ---
 
-## 🏗�?Architecture
+## 🏗️ Architecture
 
 ```
-┌─────────────────────────────────────────────────────────────────�?�?                    ACLAS Neuro-Edu SDK                         �?�?                                                                �?�? ┌─────────────�?  ┌──────────────�?  ┌──────────────────────�?�?�? �? Layer 0    �?  �?  Layer 1    �?  �?     Layer 2         �?�?�? �? WebGL/3D   �?  �? Neural MLP  �?  �?  Skill Matrix       �?�?�? �? Nebula     │◄──�? (NumPy)     │◄──�?  5-Dimensional      �?�?�? �? Three.js   �?  �? Backprop    �?  �?  Agent Profiles     �?�?�? └─────────────�?  └──────────────�?  └──────────────────────�?�?�?        �?                �?                     �?             �?�? ┌─────────────────────────────────────────────────────────�?  �?�? �?                  Layer 3 �?Engine                      �?  �?�? �? UltimateClassroom · Social Learning Bus · Evaluator   �?  �?�? �? Knowledge Graph · Federated Training · Entropy Calc   �?  �?�? └─────────────────────────────────────────────────────────�?  �?�?        �?                                                      �?�? ┌─────────────────────────────────────────────────────────�?  �?�? �?                  FastAPI REST Layer                     �?  �?�? �?  /api/teach · /api/train · /api/metrics · /api/graph  �?  �?�? └─────────────────────────────────────────────────────────�?  �?└─────────────────────────────────────────────────────────────────�?```
+┌─────────────────────────────────────────────────────────────────┐
+│                     ACLAS Neuro-Edu SDK                         │
+│                                                                 │
+│  ┌─────────────┐   ┌──────────────┐   ┌──────────────────────┐ │
+│  │  Layer 0    │   │   Layer 1    │   │      Layer 2         │ │
+│  │  WebGL/3D   │   │  Neural MLP  │   │   Skill Matrix       │ │
+│  │  Nebula     │◄──│  (NumPy)     │◄──│   5-Dimensional      │ │
+│  │  Three.js   │   │  Backprop    │   │   Agent Profiles     │ │
+│  └─────────────┘   └──────────────┘   └──────────────────────┘ │
+│         │                 │                      │              │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                   Layer 3 — Engine                      │   │
+│  │  UltimateClassroom · Social Learning Bus · Evaluator   │   │
+│  │  Knowledge Graph · Federated Training · Entropy Calc   │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│         │                                                       │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                   FastAPI REST Layer                     │   │
+│  │   /api/teach · /api/train · /api/metrics · /api/graph  │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
 
 ### File Structure
 
 ```
 aclas-neuro-edu/
 ├── core/
-�?  ├── model.py          # TinyCognitionModel �?NumPy MLP w/ real backprop
-�?  ├── agent.py          # NeuralStudentAgent �?LLM thought + skill matrix
-�?  ├── engine.py         # UltimateClassroom �?social learning bus + metrics
-�?  ├── evaluator.py      # GPA, CAS, Retention, Shannon Diversity, Dropout Risk
-�?  ├── skills.py         # 5-dim SkillMatrix with 6 agent profiles
-�?  └── knowledge_graph.py # Lightweight concept graph for D3.js
+│   ├── model.py          # TinyCognitionModel — NumPy MLP w/ real backprop
+│   ├── agent.py          # NeuralStudentAgent — LLM thought + skill matrix
+│   ├── engine.py         # UltimateClassroom — social learning bus + metrics
+│   ├── evaluator.py      # GPA, CAS, Retention, Shannon Diversity, Dropout Risk
+│   ├── skills.py         # 5-dim SkillMatrix with 6 agent profiles
+│   └── knowledge_graph.py # Lightweight concept graph for D3.js
 ├── data/
-�?  └── knowledge_base.json  # 50-sample labeled training dataset
+│   └── knowledge_base.json  # 50-sample labeled training dataset
 ├── web/
-�?  ├── index.html        # Full dashboard: 3D + Charts + Telemetry
-�?  └── app.js            # Three.js · Chart.js · D3.js frontend logic
+│   ├── index.html        # Full dashboard: 3D + Charts + Telemetry
+│   └── app.js            # Three.js · Chart.js · D3.js frontend logic
 ├── tests/
-�?  ├── test_model.py     # 9 tests �?backprop correctness, loss descent
-�?  ├── test_agent.py     # 7 tests �?initialization, mood, memory
-�?  └── test_engine.py    # 10 tests �?classroom, training, metrics
+│   ├── test_model.py     # 9 tests — backprop correctness, loss descent
+│   ├── test_agent.py     # 7 tests — initialization, mood, memory
+│   └── test_engine.py    # 10 tests — classroom, training, metrics
 ├── cli.py                # Command-line interface
 ├── main.py               # FastAPI application entry point
 └── requirements.txt
@@ -130,7 +151,7 @@ Open **http://localhost:8000** in your browser.
 
 ---
 
-## 🖥�?CLI Usage
+## 🖥️ CLI Usage
 
 ```bash
 # Simulate a classroom broadcast
@@ -149,7 +170,8 @@ python cli.py report
   ──────────────────────
       1  0.182341  ██████████████████████
       2  0.143892  ██████████████████
-      3  0.118776  ██████████████�?      4  0.099234  ████████████
+      3  0.118776  ███████████████
+      4  0.099234  ████████████
       5  0.084102  ██████████
 
   Final loss: 0.084102
@@ -212,10 +234,10 @@ Each agent predicts its absorption probability using a 3-layer MLP:
 
 ```
 Input: [complexity, attention, skill_match, fatigue, prior_knowledge]
-  �? Dense(16) + ReLU
-  �? Dense(8) + ReLU
-  �? Dense(1) + Sigmoid
-Output: absorption_probability �?(0, 1)
+  ↓  Dense(16) + ReLU
+  ↓  Dense(8) + ReLU
+  ↓  Dense(1) + Sigmoid
+Output: absorption_probability ∈ (0, 1)
 ```
 
 ### Evaluation Metrics
@@ -224,8 +246,8 @@ Output: absorption_probability �?(0, 1)
 |--------|---------|
 | **GPA** | `(knowledge_depth × 0.5 + attention × 0.3 + prior × 0.2) × 4.0` |
 | **CAS Score** | `Σ(absorption_i × attention_i) / n` |
-| **Retention Rate** | `count(agents with knowledge_pool > 0 AND mood �?Confused) / n` |
-| **Diversity Index** | Shannon entropy `H = -Σ p(mood) × log�?p(mood))` |
+| **Retention Rate** | `count(agents with knowledge_pool > 0 AND mood ≠ Confused) / n` |
+| **Diversity Index** | Shannon entropy `H = -Σ p(mood) × log₂(p(mood))` |
 | **Dropout Risk** | `(1−attention)×0.5 + fatigue×0.3 + (1−prior)×0.2` |
 
 ### Social Learning Bus
@@ -248,7 +270,7 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) and ensure all tests 
 
 ### Ideas for Contributions
 - 🔌 Ollama / local LLM integration for real agent thoughts
-- 🗄�?ChromaDB / pgvector persistent knowledge store
+- 🗄️ ChromaDB / pgvector persistent knowledge store
 - 🤖 RL-based teacher agent (learns optimal instruction complexity)
 - 🌍 Multi-language support for the dashboard
 - 📱 Mobile-responsive UI
@@ -258,13 +280,13 @@ Please read our [Contributing Guidelines](CONTRIBUTING.md) and ensure all tests 
 ## 🌍 Our Mission, Vision & The Open-Source Narrative
 
 > *"Every mind, regardless of origin or means, deserves world-class learning."*
-> �?[ACLAS Mission & Vision](https://aclas.college/explore/mission-and-vision)
+> — [ACLAS Mission & Vision](https://aclas.college/explore/mission-and-vision)
 
 ### Making Elite Education a Universal Human Right
 
 [Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college) was founded on a radical conviction: **elite education should be a universal human right**, not a privilege gated by geography or economic status.
 
-We are the world's first **antifragile university** �?an online institution unbound by geographic limits, ensuring equal opportunities for all, from San Francisco to South Sudan, with one unwavering promise:
+We are the world's first **antifragile university** — an online institution unbound by geographic limits, ensuring equal opportunities for all, from San Francisco to South Sudan, with one unwavering promise:
 
 | Pillar | What We Do |
 |--------|------------|
@@ -274,7 +296,7 @@ We are the world's first **antifragile university** �?an online institution unb
 | 🔗 **Blockchain Credentials** | Degrees with blockchain-tracked social impact metrics, fraud-proof |
 
 Our [ACLAS Vision Statement](https://aclas.college/explore/mission-and-vision):
-> *ACLAS is the world's first antifragile education �?an online university unbound by geographic limits, ensuring equal opportunities for all. We deliver Ivy League rigor through radical equity.  
+> *ACLAS is the world's first antifragile education — an online university unbound by geographic limits, ensuring equal opportunities for all. We deliver Ivy League rigor through radical equity.  
 > Neural Network Curriculum: Self-evolving online framework adapting to regional needs and aligned with UN Sustainable Development Goals.*
 
 ---
@@ -287,10 +309,10 @@ At a time when AI in education means paying for an API wrapper, we chose a diffe
 
 This project is the technical embodiment of our institutional mission:
 
-- **Radical Transparency** �?Every weight update is observable. No black-box inference. You can read the backpropagation yourself.
-- **Access Over Gatekeeping** �?By open-sourcing this framework under MIT License, we ensure any researcher, student, or engineer anywhere in the world can run, fork, and extend our cognitive simulation tools.
-- **AI for Human Flourishing** �?We don't build AI to replace teachers. We model cognition to *understand* how knowledge transfers between human minds �?and to make that process better.
-- **Credibility Through Code** �?The best argument for ACLAS's academic seriousness is not a brochure. It's a codebase with 26 passing tests, real backpropagation, and a live WebGL visualization of multi-agent learning.
+- **Radical Transparency** — Every weight update is observable. No black-box inference. You can read the backpropagation yourself.
+- **Access Over Gatekeeping** — By open-sourcing this framework under MIT License, we ensure any researcher, student, or engineer anywhere in the world can run, fork, and extend our cognitive simulation tools.
+- **AI for Human Flourishing** — We don't build AI to replace teachers. We model cognition to *understand* how knowledge transfers between human minds — and to make that process better.
+- **Credibility Through Code** — The best argument for ACLAS's academic seriousness is not a brochure. It's a codebase with 26 passing tests, real backpropagation, and a live WebGL visualization of multi-agent learning.
 
 In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) is planting its flag: **education institutions must lead AI development, not merely consume it**.
 
@@ -322,7 +344,7 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
 [![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
 [![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
-[![X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
+[![Twitter/X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
 
 ---
 
@@ -345,7 +367,7 @@ If you use this framework in your research, please cite:
 
 ## 📜 License
 
-This project is licensed under the **MIT License** �?see the [LICENSE](LICENSE) file for details.
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
 You are free to use, modify, and distribute this software for any purpose, including commercial applications, as long as the original copyright notice is included.
 
