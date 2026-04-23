@@ -123,7 +123,7 @@ async def dataset_info():
 
 
 # Serve frontend
-app.mount("/", StaticFiles(directory="web", html=True), name="web")
+app.mount("/", StaticFiles(directory="docs", html=True), name="web")
 
 
 if __name__ == "__main__":
