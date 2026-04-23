@@ -18,6 +18,10 @@
 
 ---
 
+**[English](../README.md)** | **[Fran?ais](README.fr.md)** | **[Espa?ol](README.es.md)** | **[������ܧڧ�](README.ru.md)** | **[Deutsch](README.de.md)** | **[���w����](README.zh-TW.md)** | **[�ձ��Z](README.ja.md)** | **[???](README.ko.md)**
+
+---
+
 ## 🌌 Что такое ACLAS Neuro-Edu?
 
 **ACLAS Neuro-Edu** �?это исследовательский фреймворк с открытым исходным кодом для многоагентного когнитивного моделирования. Он моделирует процесс приобретения знаний с использованием **локальных нейронных сетей**, **векторной семантики** и **анализа энтропии**.
@@ -62,3 +66,19 @@ python main.py
 <sub>© 2026 Atlanta College of Liberal Arts and Sciences.</sub>
 
 </div>
+
+---
+
+**[English](../README.md)** | **[Fran?ais](README.fr.md)** | **[Espa?ol](README.es.md)** | **[������ܧڧ�](README.ru.md)** | **[Deutsch](README.de.md)** | **[���w����](README.zh-TW.md)** | **[�ձ��Z](README.ja.md)** | **[???](README.ko.md)**
+
+---
+
+### ?? Follow ACLAS
+
+[![Website](https://img.shields.io/badge/Website-aclas.college-00f2ff?style=flat-square&logo=google-chrome)](https://aclas.college)
+[![Email](https://img.shields.io/badge/Email-info@aclas.college-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:info@aclas.college)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclascollege)
+[![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
+[![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
+[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
+[![X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
