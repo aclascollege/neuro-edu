@@ -69,6 +69,31 @@
 
         /* 3D container must have explicit size */
         #agent-3d-container { position:absolute; inset:0; border-radius:20px; overflow:hidden; background:#020508; }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .ui { height:auto; overflow-y:auto; padding:12px; gap:12px; }
+            body { height:auto; overflow-y:auto; font-size:12px; }
+            header { height:auto !important; padding:15px 20px !important; flex-direction:column; gap:12px; }
+            header > div { width:100% !important; justify-content:center; text-align:center; }
+            header .mono { gap:20px !important; justify-content:center; }
+            
+            .ui > div[style*="flex:1"] { flex-direction:column !important; height:auto !important; overflow:visible !important; }
+            
+            /* Sidebar Controls */
+            .glass[style*="width:280px"] { width:100% !important; flex-shrink:1 !important; height:auto !important; }
+            
+            /* Center Viewer */
+            div[style*="flex:1;display:flex;flex-direction:column"] { width:100% !important; height:500px !important; }
+            #view-mood div[style*="display:flex"] { flex-direction:column; height:auto !important; }
+            #view-mood div[style*="flex:1"] { height:300px; }
+            
+            /* Telemetry */
+            .glass[style*="width:310px"] { width:100% !important; height:auto !important; max-height:400px; }
+            
+            footer { flex-direction:column; height:auto !important; padding:15px !important; gap:12px; }
+            footer > div { justify-content:center; width:100%; text-align:center; }
+        }
     </style>
 </head>
 <body>
