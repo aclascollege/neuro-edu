@@ -76,28 +76,60 @@ At [ACLAS](https://aclas.college), we believe the future of education is deeply 
 
 ## 🏗️ Architecture
 
-```
-┌─────────────────────────────────────────────────────────────────┐
-│                     ACLAS Neuro-Edu SDK                         │
-│                                                                 │
-│  ┌─────────────┐   ┌──────────────┐   ┌──────────────────────┐ │
-│  │  Layer 0    │   │   Layer 1    │   │      Layer 2         │ │
-│  │  WebGL/3D   │   │  Neural MLP  │   │   Skill Matrix       │ │
-│  │  Nebula     │◄──│  (NumPy)     │◄──│   5-Dimensional      │ │
-│  │  Three.js   │   │  Backprop    │   │   Agent Profiles     │ │
-│  └─────────────┘   └──────────────┘   └──────────────────────┘ │
-│         │                 │                      │              │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                   Layer 3 — Engine                      │   │
-│  │  UltimateClassroom · Social Learning Bus · Evaluator   │   │
-│  │  Knowledge Graph · Federated Training · Entropy Calc   │   │
-│  └─────────────────────────────────────────────────────────┘   │
-│         │                                                       │
-│  ┌─────────────────────────────────────────────────────────┐   │
-│  │                   FastAPI REST Layer                     │   │
-│  │   /api/teach · /api/train · /api/metrics · /api/graph  │   │
-│  └─────────────────────────────────────────────────────────┘   │
-└─────────────────────────────────────────────────────────────────┘
+```mermaid
+graph TD
+    %% Global Styles
+    classDef layer fill:#f9f9f9,stroke:#333,stroke-width:2px,color:#000;
+    classDef core fill:#e1f5fe,stroke:#01579b,stroke-width:2px,color:#01579b,font-weight:bold;
+    classDef frontend fill:#fff3e0,stroke:#e65100,stroke-width:2px,color:#e65100;
+    classDef api fill:#f3e5f5,stroke:#4a148c,stroke-width:2px,color:#4a148c;
+
+    subgraph SDK ["ACLAS Neuro-Edu Framework Architecture"]
+        direction TB
+
+        subgraph L0 ["Layer 0: Visualization"]
+            direction LR
+            V1["WebGL / 3D Nebula"] --- V2["Three.js Frontend"]
+        end
+
+        subgraph L1 ["Layer 1: Neural Kernel"]
+            direction LR
+            N1["NumPy MLP"] --- N2["Backpropagation Engine"]
+        end
+
+        subgraph L2 ["Layer 2: Cognitive Profiles"]
+            direction LR
+            S1["5-Dim Skill Matrix"] --- S2["Agent DNA"]
+        end
+
+        subgraph L3 ["Layer 3: Core Engine"]
+            direction TB
+            E1["UltimateClassroom Bus"]
+            E2["Social Learning Bus"]
+            E3["Federated Training"]
+            E4["Entropy & GPA Evaluator"]
+            E1 --- E2 --- E3 --- E4
+        end
+
+        subgraph L4 ["Layer 4: API Gateway"]
+            A1["FastAPI REST Layer"]
+            A2["/api/teach · /api/train · /api/metrics"]
+            A1 --- A2
+        end
+
+        %% Connections
+        L2 --> L1
+        L1 --> L0
+        L3 --> L2
+        L3 --> L1
+        L4 --> L3
+    end
+
+    %% Apply Classes
+    class L0,L1,L2 layer;
+    class L3 core;
+    class L4 api;
+    class SDK frontend;
 ```
 
 ### File Structure
