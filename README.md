@@ -22,6 +22,15 @@
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-ff69b4.svg)](https://github.com/aclascollege/neuro-edu)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/aclascollege/neuro-edu/pulls)
 
+<br>
+
+[![Email](https://img.shields.io/badge/Email-info@aclas.college-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:info@aclas.college)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclascollege)
+[![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
+[![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
+[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
+[![Twitter/X](https://img.shields.io/badge/Twitter-ACLAS-1DA1F2?style=flat-square&logo=twitter)](https://twitter.com/aclascollege)
+
 ---
 
 **[🌐 Website](https://aclas.college)** &nbsp;|&nbsp;
@@ -330,11 +339,12 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 ### 📱 Follow ACLAS
 
 [![Website](https://img.shields.io/badge/Website-aclas.college-00f2ff?style=flat-square&logo=google-chrome)](https://aclas.college)
-[![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclas-college)
-[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclas-college)
-[![Twitter/X](https://img.shields.io/badge/Twitter-@aclas__college-1DA1F2?style=flat-square&logo=twitter)](https://twitter.com/aclas_college)
+[![Email](https://img.shields.io/badge/Email-info@aclas.college-D14836?style=flat-square&logo=gmail&logoColor=white)](mailto:info@aclas.college)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclascollege)
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
-[![Instagram](https://img.shields.io/badge/Instagram-@aclas.college-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclas.college)
+[![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
+[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
+[![Twitter/X](https://img.shields.io/badge/Twitter-ACLAS-1DA1F2?style=flat-square&logo=twitter)](https://twitter.com/aclascollege)
 
 ---
 
