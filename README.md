@@ -1,0 +1,370 @@
+<div align="center">
+
+<img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png" width="80" alt="ACLAS Logo" />
+
+# ACLAS Neuro-Edu SDK
+
+### *Autonomous Cognitive Simulation Framework for AI-Powered Education*
+
+**by [Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college)**
+
+[![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](https://opensource.org/licenses/MIT)
+[![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
+[![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
+[![NumPy](https://img.shields.io/badge/NumPy-Powered-013243.svg)](https://numpy.org/)
+[![Tests](https://img.shields.io/badge/Tests-26%20passed-brightgreen.svg)](#testing)
+[![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-ff69b4.svg)](https://github.com/aclas-college/neuro-edu)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/aclas-college/neuro-edu/pulls)
+
+---
+
+**[🌐 Website](https://aclas.college)** &nbsp;|&nbsp;
+**[📚 Courses](https://aclas.college/courses)** &nbsp;|&nbsp;
+**[🎓 Certifications](https://aclas.college/certification)** &nbsp;|&nbsp;
+**[💬 Community](https://aclas.college/community)** &nbsp;|&nbsp;
+**[📄 Docs](#documentation)**
+
+</div>
+
+---
+
+## 🌌 What is ACLAS Neuro-Edu?
+
+**ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis** — all without relying on any external AI APIs.
+
+> *"We don't wrap GPT. We model cognition from first principles."*
+
+This project serves as ACLAS's technical showcase, demonstrating that a modern education institution can build and publish **genuinely hardcore AI tooling** — not just course content.
+
+### Why does this exist?
+
+At [ACLAS](https://aclas.college), we believe the future of education is deeply intertwined with AI. This framework is our commitment to that belief — a live, open, runnable proof that AI and pedagogy can be unified at the systems level.
+
+---
+
+## ✨ Key Features
+
+| Feature | Description |
+|---|---|
+| 🧠 **On-Device Neural Kernel** | Pure NumPy MLP with real backpropagation (He init, ReLU, Sigmoid, SGD) — no cloud inference |
+| 📡 **Multi-Agent Social Learning** | 20+ autonomous agents exchange knowledge via a real-time message bus |
+| 📊 **Cognitive Entropy Analytics** | Thermodynamic-inspired classroom entropy tracking (Shannon H, MSE loss curves) |
+| 🎯 **5-Dim Skill Matrix** | Agents have Logic / Math / Language / Memory / Creative skill profiles |
+| 🔁 **Federated Training** | Each agent trains its own MLP on a shared dataset — real epoch losses, real descent |
+| 🌐 **3D Neural Nebula** | WebGL (Three.js) visualization of agent states in latent space |
+| 📈 **Advanced Scoring** | GPA (4.0), CAS Score, Retention Rate, Shannon Diversity Index, Dropout Risk |
+| 🕸️ **Knowledge Graph** | D3.js-powered live concept relation map built from agent learning events |
+| 🖥️ **CLI Tool** | `python cli.py simulate / train / report` — fully scriptable |
+| ✅ **26 pytest Tests** | Industrial-grade test coverage across model, agent, and engine layers |
+
+---
+
+## 🏗️ Architecture
+
+```
+┌─────────────────────────────────────────────────────────────────┐
+│                     ACLAS Neuro-Edu SDK                         │
+│                                                                 │
+│  ┌─────────────┐   ┌──────────────┐   ┌──────────────────────┐ │
+│  │  Layer 0    │   │   Layer 1    │   │      Layer 2         │ │
+│  │  WebGL/3D   │   │  Neural MLP  │   │   Skill Matrix       │ │
+│  │  Nebula     │◄──│  (NumPy)     │◄──│   5-Dimensional      │ │
+│  │  Three.js   │   │  Backprop    │   │   Agent Profiles     │ │
+│  └─────────────┘   └──────────────┘   └──────────────────────┘ │
+│         │                 │                      │              │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                   Layer 3 — Engine                      │   │
+│  │  UltimateClassroom · Social Learning Bus · Evaluator   │   │
+│  │  Knowledge Graph · Federated Training · Entropy Calc   │   │
+│  └─────────────────────────────────────────────────────────┘   │
+│         │                                                       │
+│  ┌─────────────────────────────────────────────────────────┐   │
+│  │                   FastAPI REST Layer                     │   │
+│  │   /api/teach · /api/train · /api/metrics · /api/graph  │   │
+│  └─────────────────────────────────────────────────────────┘   │
+└─────────────────────────────────────────────────────────────────┘
+```
+
+### File Structure
+
+```
+aclas-neuro-edu/
+├── core/
+│   ├── model.py          # TinyCognitionModel — NumPy MLP w/ real backprop
+│   ├── agent.py          # NeuralStudentAgent — LLM thought + skill matrix
+│   ├── engine.py         # UltimateClassroom — social learning bus + metrics
+│   ├── evaluator.py      # GPA, CAS, Retention, Shannon Diversity, Dropout Risk
+│   ├── skills.py         # 5-dim SkillMatrix with 6 agent profiles
+│   └── knowledge_graph.py # Lightweight concept graph for D3.js
+├── data/
+│   └── knowledge_base.json  # 50-sample labeled training dataset
+├── web/
+│   ├── index.html        # Full dashboard: 3D + Charts + Telemetry
+│   └── app.js            # Three.js · Chart.js · D3.js frontend logic
+├── tests/
+│   ├── test_model.py     # 9 tests — backprop correctness, loss descent
+│   ├── test_agent.py     # 7 tests — initialization, mood, memory
+│   └── test_engine.py    # 10 tests — classroom, training, metrics
+├── cli.py                # Command-line interface
+├── main.py               # FastAPI application entry point
+└── requirements.txt
+```
+
+---
+
+## 🚀 Quick Start
+
+### Prerequisites
+- Python 3.10+
+- pip
+
+### Installation
+
+```bash
+git clone https://github.com/aclas-college/neuro-edu.git
+cd neuro-edu
+pip install -r requirements.txt
+```
+
+### Launch the Dashboard
+
+```bash
+python main.py
+```
+
+Open **http://localhost:8000** in your browser.
+
+---
+
+## 🖥️ CLI Usage
+
+```bash
+# Simulate a classroom broadcast
+python cli.py simulate --text "Introduction to Bayesian inference" --complexity 0.7 --domain math --agents 20
+
+# Run federated training on the dataset
+python cli.py train --epochs 10
+
+# Print full evaluation report
+python cli.py report
+```
+
+**Example training output:**
+```
+  Epoch  Loss
+  ──────────────────────
+      1  0.182341  ██████████████████████
+      2  0.143892  ██████████████████
+      3  0.118776  ███████████████
+      4  0.099234  ████████████
+      5  0.084102  ██████████
+
+  Final loss: 0.084102
+  Training complete.
+```
+
+---
+
+## 📡 REST API Reference
+
+| Method | Endpoint | Description |
+|--------|----------|-------------|
+| `GET` | `/api/status` | Live state of all agents |
+| `POST` | `/api/teach` | Broadcast instruction to all agents |
+| `POST` | `/api/train` | Run federated training (real backprop) |
+| `GET` | `/api/metrics` | Full evaluation report (GPA, CAS, etc.) |
+| `GET` | `/api/graph` | D3.js knowledge graph export |
+| `GET` | `/api/architecture` | Neural network architecture summary |
+| `POST` | `/api/reset` | Reset simulation environment |
+
+### Example: Teach
+
+```bash
+curl -X POST http://localhost:8000/api/teach \
+  -H "Content-Type: application/json" \
+  -d '{"text": "Quantum entanglement fundamentals", "complexity": 0.85, "skills_req": {"math": 0.9}}'
+```
+
+### Example: Train
+
+```bash
+curl -X POST http://localhost:8000/api/train
+# Returns: {"epochs": 5, "epoch_losses": [0.18, 0.14, 0.11, 0.09, 0.08], "final_loss": 0.08}
+```
+
+---
+
+## 🧪 Testing
+
+```bash
+pytest tests/ -v
+```
+
+```
+tests/test_model.py::TestNeuralLayer::test_forward_shape              PASSED
+tests/test_model.py::TestTinyCognitionModel::test_loss_decreases      PASSED
+tests/test_agent.py::TestNeuralStudentAgent::test_initialization      PASSED
+tests/test_engine.py::TestUltimateClassroom::test_training            PASSED
+...
+26 passed in 0.52s
+```
+
+---
+
+## 📐 The Science Behind It
+
+### Cognitive Absorption Model
+
+Each agent predicts its absorption probability using a 3-layer MLP:
+
+```
+Input: [complexity, attention, skill_match, fatigue, prior_knowledge]
+  ↓  Dense(16) + ReLU
+  ↓  Dense(8) + ReLU
+  ↓  Dense(1) + Sigmoid
+Output: absorption_probability ∈ (0, 1)
+```
+
+### Evaluation Metrics
+
+| Metric | Formula |
+|--------|---------|
+| **GPA** | `(knowledge_depth × 0.5 + attention × 0.3 + prior × 0.2) × 4.0` |
+| **CAS Score** | `Σ(absorption_i × attention_i) / n` |
+| **Retention Rate** | `count(agents with knowledge_pool > 0 AND mood ≠ Confused) / n` |
+| **Diversity Index** | Shannon entropy `H = -Σ p(mood) × log₂(p(mood))` |
+| **Dropout Risk** | `(1−attention)×0.5 + fatigue×0.3 + (1−prior)×0.2` |
+
+### Social Learning Bus
+
+When an agent reaches `mood = Excited` (absorption > 68%), it broadcasts a **clarity signal** to up to 2 confused peers. This models peer-to-peer knowledge diffusion observed in real classrooms.
+
+---
+
+## 🤝 Contributing
+
+We welcome contributions from researchers, developers, and educators!
+
+1. Fork the repository
+2. Create your feature branch (`git checkout -b feature/amazing-feature`)
+3. Commit your changes (`git commit -m 'Add amazing feature'`)
+4. Push to the branch (`git push origin feature/amazing-feature`)
+5. Open a Pull Request
+
+Please read our [Contributing Guidelines](CONTRIBUTING.md) and ensure all tests pass before submitting.
+
+### Ideas for Contributions
+- 🔌 Ollama / local LLM integration for real agent thoughts
+- 🗄️ ChromaDB / pgvector persistent knowledge store
+- 🤖 RL-based teacher agent (learns optimal instruction complexity)
+- 🌍 Multi-language support for the dashboard
+- 📱 Mobile-responsive UI
+
+---
+
+## 🌍 Our Mission, Vision & The Open-Source Narrative
+
+> *"Every mind, regardless of origin or means, deserves world-class learning."*
+> — [ACLAS Mission & Vision](https://aclas.college/explore/mission-and-vision)
+
+### Making Elite Education a Universal Human Right
+
+[Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college) was founded on a radical conviction: **elite education should be a universal human right**, not a privilege gated by geography or economic status.
+
+We are the world's first **antifragile university** — an online institution unbound by geographic limits, ensuring equal opportunities for all, from San Francisco to South Sudan, with one unwavering promise:
+
+| Pillar | What We Do |
+|--------|------------|
+| 🌐 **Global Equity Pricing** | Fixed global tuition, 100% transparent, flexible installments |
+| 🤖 **AI-Powered Classroom** | 150+ nation learning grid connecting conflict zones to megacities |
+| ⚖️ **Geopolitical Neutrality** | Accessible in all territories via decentralized tech, 24/7 Digital Embassy |
+| 🔗 **Blockchain Credentials** | Degrees with blockchain-tracked social impact metrics, fraud-proof |
+
+Our [ACLAS Vision Statement](https://aclas.college/explore/mission-and-vision):
+> *ACLAS is the world's first antifragile education — an online university unbound by geographic limits, ensuring equal opportunities for all. We deliver Ivy League rigor through radical equity.  
+> Neural Network Curriculum: Self-evolving online framework adapting to regional needs and aligned with UN Sustainable Development Goals.*
+
+---
+
+### 🧬 Why We Build Open-Source AI
+
+ACLAS Neuro-Edu isn't just a demo. It is a **statement**.
+
+At a time when AI in education means paying for an API wrapper, we chose a different path: **build the math from scratch, publish the code, and let anyone inspect every gradient descent step**.
+
+This project is the technical embodiment of our institutional mission:
+
+- **Radical Transparency** — Every weight update is observable. No black-box inference. You can read the backpropagation yourself.
+- **Access Over Gatekeeping** — By open-sourcing this framework under MIT License, we ensure any researcher, student, or engineer anywhere in the world can run, fork, and extend our cognitive simulation tools.
+- **AI for Human Flourishing** — We don't build AI to replace teachers. We model cognition to *understand* how knowledge transfers between human minds — and to make that process better.
+- **Credibility Through Code** — The best argument for ACLAS's academic seriousness is not a brochure. It's a codebase with 26 passing tests, real backpropagation, and a live WebGL visualization of multi-agent learning.
+
+In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) is planting its flag: **education institutions must lead AI development, not merely consume it**.
+
+> *"We don't wrap GPT. We model cognition from first principles."*
+
+---
+
+## 🎓 About ACLAS
+
+**[Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college)** is a forward-thinking institution at the intersection of liberal arts and cutting-edge technology. We provide globally accessible, accredited education with a deep commitment to AI-powered learning innovation.
+
+### 🔗 Explore ACLAS
+
+| Resource | Link |
+|----------|------|
+| 🌐 Official Website | [aclas.college](https://aclas.college) |
+| 📚 Online Courses | [aclas.college/courses](https://aclas.college/courses) |
+| 🏆 Certifications | [aclas.college/certification](https://aclas.college/certification) |
+| 🎓 Academic Programs | [aclas.college/programs](https://aclas.college/programs) |
+| 📰 Research & News | [aclas.college/news](https://aclas.college/news) |
+| 💼 Careers | [aclas.college/careers](https://aclas.college/careers) |
+| 📩 Contact | [aclas.college/contact](https://aclas.college/contact) |
+
+### 📱 Follow ACLAS
+
+[![Website](https://img.shields.io/badge/Website-aclas.college-00f2ff?style=flat-square&logo=google-chrome)](https://aclas.college)
+[![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclas-college)
+[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclas-college)
+[![Twitter/X](https://img.shields.io/badge/Twitter-@aclas__college-1DA1F2?style=flat-square&logo=twitter)](https://twitter.com/aclas_college)
+[![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
+[![Instagram](https://img.shields.io/badge/Instagram-@aclas.college-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclas.college)
+
+---
+
+## 📄 Citation
+
+If you use this framework in your research, please cite:
+
+```bibtex
+@software{aclas_neuro_edu_2025,
+  title     = {ACLAS Neuro-Edu: Autonomous Cognitive Simulation Framework},
+  author    = {{Atlanta College of Liberal Arts and Sciences}},
+  year      = {2025},
+  url       = {https://github.com/aclas-college/neuro-edu},
+  note      = {Open-source AI education research framework},
+  institution = {ACLAS, \url{https://aclas.college}}
+}
+```
+
+---
+
+## 📜 License
+
+This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
+
+You are free to use, modify, and distribute this software for any purpose, including commercial applications, as long as the original copyright notice is included.
+
+---
+
+<div align="center">
+
+**Built with ❤️ by [Atlanta College of Liberal Arts and Sciences](https://aclas.college)**
+
+*Advancing human potential through AI-powered education*
+
+[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/certification) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
+
+<sub>© 2026 Atlanta College of Liberal Arts and Sciences. Open-sourced under MIT License. &nbsp;·&nbsp; <a href="https://aclas.college/policy/terms-and-condition">Terms</a> &nbsp;·&nbsp; <a href="https://aclas.college/policy/privacy-policy">Privacy</a> &nbsp;·&nbsp; <a href="https://aclas.college/home/sitemap">Sitemap</a></sub>
+
+</div>

@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACLAS Neuro-Edu | Cognitive Sovereign Lab</title>
+    <link rel="icon" href="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
+    <script src="https://d3js.org/d3.v7.min.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@200;300;400;600;700&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root { --bg:#020305; --cyan:#00f2ff; --purple:#9d00ff; --green:#00ff88; --red:#ff3366; }
+        * { box-sizing:border-box; margin:0; padding:0; }
+        body { background:var(--bg); color:#e0e8f0; font-family:'Outfit',sans-serif; height:100vh; width:100vw; overflow:hidden; font-size:13px; }
+
+        /* Glass panels */
+        .glass { background:rgba(6,10,20,0.88); backdrop-filter:blur(28px); border:1px solid rgba(255,255,255,0.07); border-radius:20px; }
+        .mono { font-family:'JetBrains Mono',monospace; }
+        .label { font-size:11px; letter-spacing:0.08em; color:#8a9ab0; text-transform:uppercase; font-weight:500; }
+
+        /* HUD grid overlay */
+        .hud-grid {
+            position:fixed; inset:0; pointer-events:none; z-index:0;
+            background-image: linear-gradient(rgba(0,242,255,0.012) 1px, transparent 1px), linear-gradient(90deg, rgba(0,242,255,0.012) 1px, transparent 1px);
+            background-size:55px 55px;
+        }
+
+        /* Layout */
+        .ui { position:relative; z-index:1; display:flex; flex-direction:column; height:100vh; padding:18px; gap:14px; }
+
+        /* Header metrics */
+        .metric-val { font-size:22px; font-weight:300; letter-spacing:-0.02em; font-family:'JetBrains Mono',monospace; }
+
+        /* Tabs */
+        .tab-btn { font-size:12px; letter-spacing:0.05em; padding:8px 18px; border-radius:10px; cursor:pointer; transition:all 0.2s; color:#7a8898; text-transform:uppercase; border:1px solid transparent; background:none; font-weight:600; }
+        .tab-btn.active { background:rgba(0,242,255,0.1); color:var(--cyan); border-color:rgba(0,242,255,0.25); }
+        .tab-btn:hover:not(.active) { color:#ccd; background:rgba(255,255,255,0.05); }
+
+        /* Scrollbars */
+        ::-webkit-scrollbar { width:3px; }
+        ::-webkit-scrollbar-thumb { background:linear-gradient(var(--cyan),var(--purple)); border-radius:2px; }
+
+        /* Buttons */
+        .btn { border-radius:12px; font-weight:700; font-size:12px; letter-spacing:0.06em; text-transform:uppercase; cursor:pointer; transition:all 0.25s; padding:14px 0; text-align:center; border:none; width:100%; display:block; }
+        .btn-primary { background:linear-gradient(135deg,#0066ee,var(--cyan)); color:#000; }
+        .btn-primary:hover:not(:disabled) { filter:brightness(1.15); transform:translateY(-1px); box-shadow:0 6px 20px rgba(0,242,255,0.25); }
+        .btn-secondary { background:rgba(157,0,255,0.1); border:1px solid rgba(157,0,255,0.25); color:var(--purple); }
+        .btn-secondary:hover:not(:disabled) { background:rgba(157,0,255,0.22); }
+        .btn-danger { background:rgba(255,51,102,0.08); border:1px solid rgba(255,51,102,0.2); color:var(--red); font-size:10px; padding:9px 0; }
+        .btn-danger:hover { background:rgba(255,51,102,0.18); }
+        .btn:disabled { opacity:0.45; cursor:not-allowed; }
+
+        /* Agent cards */
+        .agent-card { padding:13px; border-radius:13px; background:rgba(255,255,255,0.02); border-left:3px solid transparent; transition:background 0.2s; }
+        .agent-card:hover { background:rgba(255,255,255,0.05); }
+
+        /* Form */
+        textarea { font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.65; resize:none; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:12px; color:#c8d4e0; padding:12px 14px; outline:none; transition:border 0.2s; }
+        textarea:focus { border-color:rgba(0,242,255,0.3); }
+        select { background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:#aab; font-size:11px; padding:6px 10px; outline:none; cursor:pointer; }
+        input[type=range] { width:100%; height:3px; appearance:none; background:rgba(255,255,255,0.08); border-radius:2px; cursor:pointer; }
+        input[type=range]::-webkit-slider-thumb { appearance:none; width:14px; height:14px; background:var(--cyan); border-radius:50%; box-shadow:0 0 10px var(--cyan); }
+
+        /* Pulse */
+        .pulse { width:7px; height:7px; border-radius:50%; animation:pulse-kf 2s infinite; }
+        @keyframes pulse-kf { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.55;transform:scale(1.5)} }
+
+        /* 3D container must have explicit size */
+        #agent-3d-container { position:absolute; inset:0; border-radius:20px; overflow:hidden; background:#020508; }
+    </style>
+</head>
+<body>
+<div class="hud-grid"></div>
+
+<div class="ui">
+    <!-- HEADER -->
+    <header class="glass" style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:68px;flex-shrink:0">
+        <div style="display:flex;align-items:center;gap:24px">
+            <!-- Icon-only logo to avoid long text -->
+            <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png"
+                 alt="ACLAS" style="height:36px;width:36px;object-fit:contain;border-radius:6px">
+            <div style="width:1px;height:28px;background:rgba(255,255,255,0.08)"></div>
+            <div>
+                <div style="font-size:17px;font-weight:700;letter-spacing:0.35em;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent">ACLAS NEURO-EDU</div>
+                <div class="label" style="margin-top:2px;letter-spacing:0.3em">Cognitive Sovereign Protocol · v3.0.0</div>
+            </div>
+        </div>
+        <div style="display:flex;gap:40px;text-align:right" class="mono">
+            <div><div class="label">Tick</div><div class="metric-val" id="h-tick">0000</div></div>
+            <div><div class="label">Class GPA</div><div class="metric-val" id="h-gpa" style="color:var(--green)">—</div></div>
+            <div><div class="label">CAS Score</div><div class="metric-val" id="h-cas" style="color:var(--cyan)">—</div></div>
+            <div><div class="label">Retention</div><div class="metric-val" id="h-ret" style="color:var(--purple)">—</div></div>
+        </div>
+    </header>
+
+    <!-- MAIN AREA -->
+    <div style="flex:1;display:flex;gap:14px;overflow:hidden;min-height:0">
+
+        <!-- LEFT: Controls -->
+        <div class="glass" style="width:280px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;padding:22px;overflow-y:auto">
+            <div class="label" style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px">Control Terminal</div>
+
+            <div style="display:flex;flex-direction:column;gap:6px">
+                <div class="label">Instruction Set</div>
+                <textarea id="txt-instruction" style="height:120px" placeholder="Enter pedagogical instructions..."></textarea>
+            </div>
+
+            <div style="display:flex;gap:10px">
+                <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+                    <div class="label">Domain</div>
+                    <select id="sel-domain">
+                        <option value="logic">Logic</option>
+                        <option value="math">Math</option>
+                        <option value="language">Language</option>
+                        <option value="memory">Memory</option>
+                        <option value="creative">Creative</option>
+                    </select>
+                </div>
+                <div style="flex:1;display:flex;flex-direction:column;gap:5px">
+                    <div class="label" style="display:flex;justify-content:space-between">Entropy <span id="lbl-complex" style="color:var(--cyan)" class="mono">0.50</span></div>
+                    <input type="range" id="rng-complex" min="0" max="1" step="0.01" value="0.5" style="margin-top:8px">
+                </div>
+            </div>
+
+            <button class="btn btn-primary" id="btn-teach">Initiate Broadcast</button>
+            <button class="btn btn-secondary" id="btn-train">Run Federated Training</button>
+            <button class="btn btn-danger" id="btn-reset">Reset Environment</button>
+
+            <div id="train-result" class="mono glass" style="font-size:10px;padding:12px;border-radius:12px;color:#666;display:none;line-height:1.8"></div>
+
+            <div style="margin-top:auto;border-top:1px solid rgba(255,255,255,0.05);padding-top:12px">
+                <div class="label" style="margin-bottom:6px">Neural Architecture</div>
+                <div id="arch-info" class="mono" style="font-size:10px;color:#6a7a90;line-height:1.8">Loading...</div>
+            </div>
+        </div>
+
+        <!-- CENTER: Tabbed viewer -->
+        <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0">
+            <!-- Tab bar -->
+            <div class="glass" style="height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;flex-shrink:0">
+                <button class="tab-btn active" data-tab="nebula">Neural Nebula</button>
+                <button class="tab-btn" data-tab="loss">Loss Curve</button>
+                <button class="tab-btn" data-tab="graph">Knowledge Graph</button>
+                <button class="tab-btn" data-tab="mood">Mood &amp; Skills</button>
+                <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+                    <div class="pulse" style="background:var(--green)"></div>
+                    <span class="label">LIVE</span>
+                </div>
+            </div>
+
+            <!-- View container -->
+            <div style="flex:1;position:relative;min-height:0">
+
+                <!-- Nebula: 3D Three.js -->
+                <div id="view-nebula" style="position:absolute;inset:0;border-radius:20px;overflow:hidden">
+                    <div id="agent-3d-container"></div>
+                    <!-- Legend overlay -->
+                    <div style="position:absolute;top:18px;right:20px;display:flex;gap:20px;background:rgba(2,3,8,0.7);padding:8px 18px;border-radius:30px;border:1px solid rgba(255,255,255,0.1)">
+                        <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Excited</span></div>
+                        <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Focused</span></div>
+                        <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Confused</span></div>
+                    </div>
+                    <div style="position:absolute;bottom:16px;left:20px;font-size:9px;letter-spacing:0.2em;color:rgba(0,242,255,0.15)" class="mono">LATENT SPACE RENDERER · WebGL · Three.js</div>
+                </div>
+
+                <!-- Loss Curve -->
+                <div id="view-loss" class="glass" style="position:absolute;inset:0;display:none;padding:24px">
+                    <div class="label" style="margin-bottom:16px">Backpropagation Loss Curve (MSE) — federated avg across all agents</div>
+                    <div style="height:calc(100% - 36px);position:relative"><canvas id="chart-loss"></canvas></div>
+                </div>
+
+                <!-- Knowledge Graph -->
+                <div id="view-graph" class="glass" style="position:absolute;inset:0;display:none">
+                    <div class="label" style="position:absolute;top:18px;left:22px">Concept Relation Map — Live Knowledge Graph</div>
+                    <svg id="kg-svg" style="width:100%;height:100%"></svg>
+                </div>
+
+                <!-- Mood + Skills -->
+                <div id="view-mood" class="glass" style="position:absolute;inset:0;display:none;padding:24px">
+                    <div class="label" style="margin-bottom:16px">Classroom Mood Distribution + Skill Radar</div>
+                    <div style="display:flex;gap:24px;height:calc(100% - 36px)">
+                        <div style="flex:1;position:relative"><canvas id="chart-mood"></canvas></div>
+                        <div style="flex:1;position:relative"><canvas id="chart-skill"></canvas></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- RIGHT: Telemetry -->
+        <div class="glass" style="width:310px;flex-shrink:0;display:flex;flex-direction:column;padding:20px;overflow:hidden">
+            <div class="label" style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between">
+                Cognitive Telemetry <span id="rp-count" class="mono" style="color:#6a7a90">AGENTS: 20</span>
+            </div>
+
+            <div id="risk-section" style="display:none;margin-bottom:12px">
+                <div class="label" style="color:var(--red);margin-bottom:6px">⚠ Dropout Risk</div>
+                <div id="risk-list"></div>
+            </div>
+
+            <div id="agent-list" style="flex:1;overflow-y:auto;display:flex;flex-direction:column;gap:8px"></div>
+        </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer style="flex-shrink:0;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 28px" class="glass">
+        <div style="display:flex;align-items:center;gap:14px">
+            <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png" alt="ACLAS" style="height:18px;width:18px;object-fit:contain;opacity:0.7">
+            <span style="font-size:12px;color:#8090a8;font-weight:500">Atlanta College of Liberal Arts and Sciences</span>
+            <span style="color:rgba(255,255,255,0.12)">·</span>
+            <span style="font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(0,242,255,0.07);border:1px solid rgba(0,242,255,0.15);color:#00f2ff;font-weight:600;letter-spacing:0.06em">Open Source</span>
+        </div>
+        <div style="display:flex;align-items:center;gap:20px">
+            <span style="font-size:11px;color:#4a5a6a" class="mono">Neuro-Edu SDK v3.0.0 · MIT License</span>
+            <a href="https://github.com/aclas-college/neuro-edu" target="_blank"
+               style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#8090a8;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all 0.2s"
+               onmouseover="this.style.borderColor='rgba(0,242,255,0.4)';this.style.color='#00f2ff';this.style.background='rgba(0,242,255,0.06)'"
+               onmouseout="this.style.borderColor='rgba(255,255,255,0.1)';this.style.color='#8090a8';this.style.background='rgba(255,255,255,0.03)'">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/>
+                </svg>
+                GitHub
+            </a>
+        </div>
+    </footer>
+</div>
+
+<script src="app.js"></script>
+</body>
+</html>
