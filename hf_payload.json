@@ -1,0 +1,11 @@
+{
+  "operations": [
+    {
+      "operation": "add",
+      "path": "README.md",
+      "content": "LS0tCnRpdGxlOiBBY2xhcyBOZXVybyBEYXNoYm9hcmQKZW1vamk6IPCfkKhjb2xvckZyb206IHllbGxvdwpjb2xvclRvOiBibHVlCnNkazogc3RhdGljCnBpbm5lZDogZmFsc2UKLS0tCgojIEFDTEFTIE5ldXJvIERhc2hib2FyZApMaXZlIHZpc3VhbGl6YXRpb24gZm9yIE5ldXJvLUVkdSBTREsuCg==",
+      "encoding": "base64"
+    }
+  ],
+  "commit_message": "Fix SDK config via API curl"
+}

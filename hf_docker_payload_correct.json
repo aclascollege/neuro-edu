@@ -1,0 +1,1 @@
+{"operations": [{"operation": "add", "path": "README.md", "content": "LS0tCnRpdGxlOiBBY2xhcyBOZXVybyBEYXNoYm9hcmQKZW1vamk6IPCfkKgKY29sb3JGcm9tOiB5ZWxsb3cKY29sb3JUbzogYmx1ZQpzZGs6IGRvY2tlcgpwaW5uZWQ6IGZhbHNlCi0tLQoKIyBBQ0xBUyBOZXVybyBEYXNoYm9hcmQKTGl2ZSB2aXN1YWxpemF0aW9uIGZvciBOZXVyby1FZHUgU0RLLgo=", "encoding": "base64"}], "summary": "Force state change to docker"}

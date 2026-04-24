@@ -29,7 +29,7 @@
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
 [![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
 [![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
-[![Twitter/X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
+[![X](https://img.shields.io/badge/X-ACLAS-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/aclascollege)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ACLAS-yellow?style=flat-square)](https://huggingface.co/ACLASCollege)
 
 ---
@@ -38,7 +38,6 @@
 **[🚀 Live Demo](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
 **[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
 **[📚 Courses](https://aclas.college/home/courses)** &nbsp;|&nbsp;
-**[🎓 MCS Program](https://aclas.college/programs/mcs)** &nbsp;|&nbsp;
 **[🏆 Certifications](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
 **[💬 Community](https://aclas.college/admissions/alumni-network)** &nbsp;|&nbsp;
 **[📄 Docs](#documentation)**
@@ -377,7 +376,7 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
 [![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
 [![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
-[![Twitter/X](https://img.shields.io/badge/X-AclasCollege-000000?style=flat-square&logo=x)](https://x.com/AclasCollege)
+[![X](https://img.shields.io/badge/X-ACLAS-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/aclascollege)
 
 ---
 
@@ -386,10 +385,10 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 If you use this framework in your research, please cite:
 
 ```bibtex
-@software{aclas_neuro_edu_2025,
+@software{aclas_neuro_edu_2026,
   title     = {ACLAS Neuro-Edu: Autonomous Cognitive Simulation Framework},
   author    = {{Atlanta College of Liberal Arts and Sciences}},
-  year      = {2025},
+  year      = {2026},
   url       = {https://github.com/aclascollege/neuro-edu},
   note      = {Open-source AI education research framework},
   institution = {ACLAS, \url{https://aclas.college}}
@@ -412,7 +411,7 @@ You are free to use, modify, and distribute this software for any purpose, inclu
 
 *Advancing human potential through AI-powered education*
 
-[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [🎓 MCS Program](https://aclas.college/programs/mcs) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/home/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/verify/certificate-verify) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
+[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/home/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/verify/certificate-verify) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
 
 <sub>© 2026 Atlanta College of Liberal Arts and Sciences. Open-sourced under MIT License. &nbsp;·&nbsp; <a href="https://aclas.college/policy/terms-and-condition">Terms</a> &nbsp;·&nbsp; <a href="https://aclas.college/policy/privacy-policy">Privacy</a> &nbsp;·&nbsp; <a href="https://aclas.college/home/sitemap">Sitemap</a></sub>
 

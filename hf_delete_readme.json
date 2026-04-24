@@ -1,0 +1,9 @@
+{
+  "operations": [
+    {
+      "operation": "delete",
+      "path": "README.md"
+    }
+  ],
+  "summary": "Delete README to clear cache"
+}
