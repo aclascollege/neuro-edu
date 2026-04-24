@@ -32,7 +32,7 @@ jobs:
         bandit -r core/ main.py cli.py -ll
     - name: Dependency Audit (pip-audit)
       run: |
-        pip-audit
+        pip-audit -r requirements.txt
     - name: Test with pytest (including API)
       run: |
         pytest tests/ -v
