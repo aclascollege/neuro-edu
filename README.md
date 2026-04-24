@@ -1,3 +1,4 @@
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19743807.svg)](https://doi.org/10.5281/zenodo.19743807)
 <div align="center">
 
 <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png" width="80" alt="ACLAS Logo" />
@@ -13,6 +14,7 @@
 **[English](README.md)** | **[Français](translations/README.fr.md)** | **[Español](translations/README.es.md)** | **[Русский](translations/README.ru.md)** | **[Deutsch](translations/README.de.md)** | **[繁體中文](translations/README.zh-TW.md)** | **[日本語](translations/README.ja.md)** | **[한국어](translations/README.ko.md)**
 
 ---
+
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
