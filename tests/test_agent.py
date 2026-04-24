@@ -27,12 +27,12 @@ class TestNeuralStudentAgent:
 
     def test_mood_excited_on_easy_content(self):
         """High-skill agent on easy content should tend toward Excited."""
-        agent = NeuralStudentAgent("0", "Genius", "polymath")
-        agent.prior_knowledge = 0.9
-        agent.attention = 1.0
-        # Run 10 times to overcome random init
         moods = []
+        # Run 10 times with different agents to overcome random weight init
         for _ in range(10):
+            agent = NeuralStudentAgent("0", "Genius", "polymath")
+            agent.prior_knowledge = 0.9
+            agent.attention = 1.0
             r = agent.process_sync("Basic addition", 0.05, {"math": 0.1})
             moods.append(r["mood"])
         # At least some should be Excited or Focused (not all Confused)
