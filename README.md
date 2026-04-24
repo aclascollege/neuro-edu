@@ -48,11 +48,9 @@
 
 ## 🌌 What is ACLAS Neuro-Edu?
 
-**ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis** — all without relying on any external AI APIs.
+**ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis**.
 
-> *"We don't wrap GPT. We model cognition from first principles."*
-
-This project serves as ACLAS's technical showcase, demonstrating that a modern education institution can build and publish **genuinely hardcore AI tooling** — not just course content.
+Now enhanced with **Hugging Face Hub integration**, the framework supports exporting cognitive model weights for collaborative research and federated evaluation.
 
 ### Why does this exist?
 
@@ -64,16 +62,15 @@ At [ACLAS](https://aclas.college), we believe the future of education is deeply 
 
 | Feature | Description |
 |---|---|
-| 🧠 **On-Device Neural Kernel** | Pure NumPy MLP with real backpropagation (He init, ReLU, Sigmoid, SGD) — no cloud inference |
+| 🧠 **On-Device Neural Kernel** | Pure NumPy MLP with real backpropagation (He init, ReLU, Sigmoid, SGD) |
+| 🤗 **Hugging Face Hub** | Official model repository for sharing and versioning cognitive weights |
 | 📡 **Multi-Agent Social Learning** | 20+ autonomous agents exchange knowledge via a real-time message bus |
-| 📊 **Cognitive Entropy Analytics** | Thermodynamic-inspired classroom entropy tracking (Shannon H, MSE loss curves) |
-| 🎯 **5-Dim Skill Matrix** | Agents have Logic / Math / Language / Memory / Creative skill profiles |
-| 🔁 **Federated Training** | Each agent trains its own MLP on a shared dataset — real epoch losses, real descent |
-| 🌐 **3D Neural Nebula** | WebGL (Three.js) visualization of agent states in latent space |
-| 📈 **Advanced Scoring** | GPA (4.0), CAS Score, Retention Rate, Shannon Diversity Index, Dropout Risk |
+| 📊 **Cognitive Entropy Analytics** | Thermodynamic-inspired classroom entropy tracking (Shannon H, MSE loss) |
+| 🛡️ **Industrial-Grade CI/CD** | Automated security (Bandit), dependency audit (pip-audit), and linting (Ruff) |
+| 📈 **Performance Benchmarks** | Real-time tracking of tick latency (500+ ticks/s) and training efficiency |
+| 🎯 **5-Dim Skill Matrix** | Logic / Math / Language / Memory / Creative skill profiles |
 | 🕸️ **Knowledge Graph** | D3.js-powered live concept relation map built from agent learning events |
-| 🖥️ **CLI Tool** | `python cli.py simulate / train / report` — fully scriptable |
-| ✅ **26 pytest Tests** | Industrial-grade test coverage across model, agent, and engine layers |
+| ✅ **Regression Testing** | Comprehensive suite covering Neural Kernels, Social Bus, and FastAPI Endpoints |
 
 ---
 
