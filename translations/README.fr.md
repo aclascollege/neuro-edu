@@ -34,7 +34,9 @@
 ### 🌟 Caractéristiques Clés
 
 - 🧠 **Noyau Neuronal Local** : MLP en pur NumPy avec rétropropagation réelle.
+- 🤗 **Intégration Hugging Face** : Exportation des poids des modèles cognitifs.
 - 📡 **Apprentissage Social** : Plus de 20 agents autonomes échangeant des connaissances.
+- 🛡️ **CI/CD de classe industrielle** : Audit de sécurité, vérification des dépendances et benchmarks.
 - 📊 **Analyse de l'Entropie** : Suivi de l'ordre sémantique vs chaos en temps réel.
 - 📈 **Métriques Avancées** : GPA, score CAS, taux de rétention et risque de décrochage.
 

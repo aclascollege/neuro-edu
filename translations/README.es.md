@@ -34,7 +34,9 @@
 ### 🌟 Características Principales
 
 - 🧠 **Núcleo Neuronal Local** : MLP en NumPy puro con retropropagación real.
+- 🤗 **Integración con Hugging Face** : Exportación de pesos de modelos cognitivos.
 - 📡 **Aprendizaje Social** : Más de 20 agentes intercambiando conocimientos en tiempo real.
+- 🛡️ **CI/CD de grado industrial** : Auditoría de seguridad, verificación de dependencias y rendimiento.
 - 📊 **Análisis de Entropía** : Seguimiento del orden semántico vs. caos.
 - 📈 **Métricas Avanzadas** : GPA, puntaje CAS, tasa de retención y riesgo de deserción.
 

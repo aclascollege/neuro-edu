@@ -34,7 +34,9 @@
 ### 🌟 Hauptmerkmale
 
 - 🧠 **On-Device Neural Kernel**: MLP in purem NumPy mit echtem Backpropagation.
+- 🤗 **Hugging Face Integration** : Export von kognitiven Modellgewichten.
 - 📡 **Soziales Lernen**: Über 20 autonome Agenten tauschen Wissen in Echtzeit aus.
+- 🛡️ **Industrielle CI/CD** : Sicherheitsaudit, Abhängigkeitsprüfung und Performance-Benchmarks.
 - 📈 **Erweiterte Metriken**: GPA, CAS-Score, Retentionsrate und Dropout-Risiko.
 
 ---
