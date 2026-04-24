@@ -40,6 +40,20 @@
 - 🛡️ **Industrielle CI/CD** : Sicherheitsaudit, Abhängigkeitsprüfung und Performance-Benchmarks.
 - 📈 **Erweiterte Metriken**: GPA, CAS-Score, Retentionsrate und Dropout-Risiko.
 
+## 🔌 Steckbare LLM Kognitive Engines
+
+Während Neuro-Edu nativ mit einem minimalistischen, auf ersten Prinzipien basierenden neuronalen Netzwerk (`TinyCognitionModel`) ausgeliefert wird, ist unser Framework hochgradig erweiterbar. Sie können **Ollama** oder **vLLM** nahtlos integrieren, um den inneren Monolog und Denkprozess jedes KI-Studenten mit den weltweit führenden Open-Source-Modellen zu betreiben!
+
+Wir empfehlen dringend, die folgenden Open-Weights-Modelle als kognitive Engines in unserer Multi-Agenten-Sandbox zu testen:
+- 🦙 **Llama-3 & Llama-3.1** (Meta)
+- 🤖 **Qwen 2.5** (Alibaba Cloud) - *Standardmäßig in unserer `agent.py` konfiguriert*
+- 🐋 **DeepSeek-V3 / DeepSeek-Coder** (DeepSeek)
+- 💎 **Gemma-2** (Google)
+- 🔬 **Phi-3** (Microsoft)
+- 🌪️ **Mistral / Mixtral** (Mistral AI)
+
+Bauen Sie Ihre eigene Modell-Arena und beobachten Sie, wie verschiedene Modelle auf Bildungsreize reagieren!
+
 ---
 
 ## 🏗️ Mission & Vision

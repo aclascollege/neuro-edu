@@ -41,6 +41,20 @@
 - 📊 **Análisis de Entropía** : Seguimiento del orden semántico vs. caos.
 - 📈 **Métricas Avanzadas** : GPA, puntaje CAS, tasa de retención y riesgo de deserción.
 
+## 🔌 Motores Cognitivos LLM Enchufables
+
+Aunque Neuro-Edu se envía nativamente con una red neuronal minimalista basada en primeros principios (`TinyCognitionModel`), nuestro marco de trabajo está diseñado para ser altamente extensible. ¡Puede conectar **Ollama** o **vLLM** sin problemas para impulsar el monólogo interno y el proceso de pensamiento de cada estudiante de IA utilizando los modelos de código abierto líderes del mundo!
+
+Recomendamos encarecidamente probar los siguientes modelos de pesos abiertos como motores cognitivos dentro de nuestro sandbox multiagente:
+- 🦙 **Llama-3 & Llama-3.1** (Meta)
+- 🤖 **Qwen 2.5** (Alibaba Cloud) - *Configurado por defecto en nuestro `agent.py`*
+- 🐋 **DeepSeek-V3 / DeepSeek-Coder** (DeepSeek)
+- 💎 **Gemma-2** (Google)
+- 🔬 **Phi-3** (Microsoft)
+- 🌪️ **Mistral / Mixtral** (Mistral AI)
+
+¡Construya su propia arena de modelos masivos y vea cómo los diferentes modelos reaccionan a los estímulos educativos!
+
 ---
 
 ## 🏗️ Misión y Visión

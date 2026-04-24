@@ -42,6 +42,20 @@
 - 🎯 **5 維技能矩陣**：智能體具備邏輯、數學、語言、記憶和創意等屬性。
 - 📈 **先進評分系統**：GPA、CAS 評分、留存率和失學風險分析。
 
+## 🔌 可插拔的 LLM 認知引擎
+
+雖然 Neuro-Edu 原生自帶了基於第一性原理的極簡神經網絡 (`TinyCognitionModel`)，但我們的框架設計是高度可擴展的。您可以無縫接入 **Ollama** 或 **vLLM**，使用全球領先的開源大模型來驅動每個 AI 學生的內心獨白與思考過程！
+
+我們原生支持並強烈建議在我們的多智能體沙盒中測試以下開源模型作為認知引擎：
+- 🦙 **Llama-3 & Llama-3.1** (Meta)
+- 🤖 **Qwen 2.5** (Alibaba Cloud) - *在我們的 `agent.py` 中默認配置*
+- 🐋 **DeepSeek-V3 / DeepSeek-Coder** (DeepSeek)
+- 💎 **Gemma-2** (Google)
+- 🔬 **Phi-3** (Microsoft)
+- 🌪️ **Mistral / Mixtral** (Mistral AI)
+
+快來構建您的專屬大模型競技場，觀察不同模型對教學刺激的真實反應吧！
+
 ---
 
 ## 🏗️ 我們的使命與願景

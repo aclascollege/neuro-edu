@@ -74,6 +74,22 @@ At [ACLAS](https://aclas.college), we believe the future of education is deeply 
 
 ---
 
+## 🔌 Pluggable LLM Cognitive Engines
+
+While Neuro-Edu ships natively with a minimalist, first-principles neural network (`TinyCognitionModel`), our framework is designed to be highly extensible. You can seamlessly plug in **Ollama** or **vLLM** to power each AI student's internal monologue and thought process using the world's leading open-source models!
+
+We natively support and highly recommend testing the following open-weights models as cognitive engines within our multi-agent sandbox:
+- 🦙 **Llama-3 & Llama-3.1** (Meta)
+- 🤖 **Qwen 2.5** (Alibaba Cloud) - *Default configured in our `agent.py`*
+- 🐋 **DeepSeek-V3 / DeepSeek-Coder** (DeepSeek)
+- 💎 **Gemma-2** (Google)
+- 🔬 **Phi-3** (Microsoft)
+- 🌪️ **Mistral / Mixtral** (Mistral AI)
+
+Build your own LLM arena and see how different models react to educational stimuli!
+
+---
+
 ## 🏗️ Architecture
 
 ```mermaid
