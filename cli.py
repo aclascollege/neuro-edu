@@ -10,10 +10,8 @@ import sys
 import os
 sys.path.insert(0, os.path.dirname(__file__))
 
-import json
 import argparse
 from core.engine import UltimateClassroom
-from core.evaluator import CognitiveEvaluator
 
 
 def print_header():
@@ -78,7 +76,7 @@ def cmd_train(args):
         print(f"  {i:>5}  {loss:.6f}  {bar}")
 
     print(f"\n  Final loss: {result['final_loss']:.6f}")
-    print(f"  Training complete.\n")
+    print("  Training complete.\n")
 
 
 def cmd_report(args):
@@ -91,26 +89,26 @@ def cmd_report(args):
         classroom.broadcast("Sample lesson content for evaluation.", 0.5, {"logic": 0.5})
 
     metrics = classroom.get_metrics()
-    print(f"  ┌─ ACLAS Cognitive Evaluation Report ─────────────────────┐")
+    print("  ┌─ ACLAS Cognitive Evaluation Report ─────────────────────┐")
     print(f"  │  Tick:             {metrics['tick']}")
     print(f"  │  GPA:              {metrics['gpa']:.2f} / 4.00")
     print(f"  │  CAS Score:        {metrics['cas']:.4f}")
     print(f"  │  Retention Rate:   {metrics['retention_rate']:.1%}")
     print(f"  │  Diversity Index:  {metrics['diversity_index']:.4f} (Shannon H)")
-    print(f"  ├─ Mood Distribution ─────────────────────────────────────┤")
+    print("  ├─ Mood Distribution ─────────────────────────────────────┤")
     for mood, count in metrics["mood_distribution"].items():
         bar = "▓" * count
         print(f"  │  {mood:<10} {bar:<25} ({count})")
-    print(f"  ├─ Skill Distribution ────────────────────────────────────┤")
+    print("  ├─ Skill Distribution ────────────────────────────────────┤")
     for skill, val in metrics["skill_distribution"].items():
         bar = "█" * int(val * 20)
         print(f"  │  {skill:<10} {bar:<22} {val:.3f}")
     at_risk = metrics.get("dropout_risk", [])
     if at_risk:
-        print(f"  ├─ Dropout Risk ───────────────────────────────────────────┤")
+        print("  ├─ Dropout Risk ───────────────────────────────────────────┤")
         for r in at_risk:
             print(f"  │  ⚠ {r['name']:<15} Risk: {r['risk']:.3f} [{r['mood']}]")
-    print(f"  └─────────────────────────────────────────────────────────┘\n")
+    print("  └─────────────────────────────────────────────────────────┘\n")
 
 
 def main():

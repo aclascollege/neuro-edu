@@ -4,7 +4,7 @@ Pure NumPy multi-layer perceptron with full backpropagation.
 This is the on-device neural kernel powering every student agent.
 """
 import numpy as np
-from typing import List, Dict, Tuple
+from typing import List, Dict
 
 
 class NeuralLayer:
@@ -133,10 +133,10 @@ class TinyCognitionModel:
         return [round(v, 6) for v in self.loss_history[-last_n:]]
 
     def get_architecture_summary(self) -> Dict:
-        dims = [l.weights.shape[0] for l in self.layers] + [self.layers[-1].weights.shape[1]]
+        dims = [layer.weights.shape[0] for layer in self.layers] + [self.layers[-1].weights.shape[1]]
         return {
             "architecture": dims,
-            "total_params": sum(l.weights.size + l.bias.size for l in self.layers),
+            "total_params": sum(layer.weights.size + layer.bias.size for layer in self.layers),
             "optimizer": "SGD",
             "loss_fn": "MSE",
             "activation": "ReLU+Sigmoid",

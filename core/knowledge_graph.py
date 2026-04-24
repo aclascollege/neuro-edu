@@ -4,7 +4,6 @@ Tracks concept nodes and their relations as agents learn.
 Exports a D3.js-compatible JSON format for live visualization.
 """
 from typing import Dict, List, Any
-import math
 
 
 class KnowledgeGraph:

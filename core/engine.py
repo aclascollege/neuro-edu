@@ -7,7 +7,7 @@ UltimateClassroom Engine v3
 import json
 import random
 from pathlib import Path
-from typing import List, Dict, Any
+from typing import List, Dict
 
 from .agent import NeuralStudentAgent
 from .evaluator import CognitiveEvaluator

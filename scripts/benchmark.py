@@ -4,7 +4,6 @@ import sys
 import os
 sys.path.append(os.getcwd())
 from core.engine import UltimateClassroom
-from core.skills import SkillMatrix
 
 def run_benchmark():
     print("Starting ACLAS Neuro-Edu Performance Benchmark...")
@@ -35,8 +34,8 @@ def run_benchmark():
     print(f"OK: Training Performance (1 epoch, 50 agents): {train_time:.4f}s")
     
     print("\nBenchmark Results Summary:")
-    print(f"| Metric | Value |")
-    print(f"|---|---|")
+    print("| Metric | Value |")
+    print("|---|---|")
     print(f"| Init Time | {init_time:.4f}s |")
     print(f"| Avg Tick | {avg_tick:.6f}s |")
     print(f"| Ticks/sec | {ticks_per_sec:.2f} |")
