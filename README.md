@@ -34,6 +34,8 @@
 ---
 
 **[🌐 Website](https://aclas.college)** &nbsp;|&nbsp;
+**[🚀 Live Demo](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
+**[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
 **[📚 Courses](https://aclas.college/home/courses)** &nbsp;|&nbsp;
 **[🎓 Certifications](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
 **[💬 Community](https://aclas.college/admissions/alumni-network)** &nbsp;|&nbsp;
