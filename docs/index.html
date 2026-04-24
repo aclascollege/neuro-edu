@@ -57,9 +57,9 @@
         .agent-card:hover { background:rgba(255,255,255,0.05); }
 
         /* Form */
-        textarea { font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.65; resize:none; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:12px; color:#c8d4e0; padding:12px 14px; outline:none; transition:border 0.2s; }
+        textarea { font-family:'JetBrains Mono',monospace; font-size:11px; line-height:1.65; resize:none; background:rgba(0,0,0,0.3); border:1px solid rgba(255,255,255,0.08); border-radius:12px; color:#c8d4e0; padding:12px 14px; outline:none; transition:border 0.2s; width:100%; }
         textarea:focus { border-color:rgba(0,242,255,0.3); }
-        select { background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:#aab; font-size:11px; padding:6px 10px; outline:none; cursor:pointer; }
+        select { background:rgba(0,0,0,0.35); border:1px solid rgba(255,255,255,0.1); border-radius:10px; color:#aab; font-size:11px; padding:6px 10px; outline:none; cursor:pointer; width:100%; }
         input[type=range] { width:100%; height:3px; appearance:none; background:rgba(255,255,255,0.08); border-radius:2px; cursor:pointer; }
         input[type=range]::-webkit-slider-thumb { appearance:none; width:14px; height:14px; background:var(--cyan); border-radius:50%; box-shadow:0 0 10px var(--cyan); }
 
@@ -70,42 +70,62 @@
         /* 3D container must have explicit size */
         #agent-3d-container { position:absolute; inset:0; border-radius:20px; overflow:hidden; background:#020508; }
 
-        /* Responsive */
+        /* ========== MOBILE RESPONSIVE ========== */
         @media (max-width: 1024px) {
-            .ui { height:auto; overflow-y:auto; padding:12px; gap:12px; }
-            body { height:auto; overflow-y:auto; font-size:12px; }
-            
-            /* Header */
-            header { height:auto !important; padding:15px !important; flex-direction:column; gap:12px; }
-            header > div { width:100% !important; justify-content:center; text-align:center; flex-wrap:wrap; }
-            header .mono { gap:15px !important; justify-content:center; }
-            header div[style*="font-size:17px"] { font-size:14px !important; letter-spacing:0.15em !important; }
-            header .label[style*="letter-spacing:0.3em"] { font-size:9px !important; letter-spacing:0.1em !important; }
-            
-            .ui > div[style*="flex:1"] { flex-direction:column !important; height:auto !important; overflow:visible !important; }
-            
-            /* Sidebar Controls */
-            .glass[style*="width:280px"] { width:100% !important; flex-shrink:1 !important; height:auto !important; }
-            
-            /* Center Viewer */
-            .ui > div > div:nth-child(2) { width:100% !important; height:auto !important; display:block !important; }
-            
-            /* Tabs */
-            .ui > div > div:nth-child(2) > div.glass:first-child { flex-wrap:wrap; height:auto !important; padding:10px !important; justify-content:center; gap:8px; margin-bottom: 12px; }
-            .tab-btn { padding:6px 10px; font-size:10px; }
-            
-            /* View Container (forces 3D canvas and charts to have height on mobile) */
-            .ui > div > div:nth-child(2) > div:nth-child(2) { height:400px !important; display:block !important; position:relative !important; }
-            
-            #view-mood div[style*="display:flex"] { flex-direction:column; height:auto !important; }
-            #view-mood div[style*="flex:1"] { height:300px; }
-            
-            /* Telemetry */
-            .glass[style*="width:310px"] { width:100% !important; height:auto !important; max-height:400px; }
-            
-            /* Footer */
-            footer { flex-direction:column; height:auto !important; padding:15px !important; gap:12px; }
-            footer > div { justify-content:center; width:100%; text-align:center; flex-wrap:wrap; line-height:1.6; }
+            /* Root: allow scrolling */
+            body { height:auto; overflow-y:auto; }
+            .ui { height:auto; min-height:100vh; overflow-y:auto; padding:10px; gap:10px; }
+
+            /* Header: stack vertically, shrink text */
+            #app-header { height:auto !important; padding:14px 16px !important; flex-direction:column !important; gap:10px !important; }
+            #header-brand { justify-content:center !important; text-align:center; gap:12px !important; }
+            #header-brand .brand-title { font-size:13px !important; letter-spacing:0.12em !important; }
+            #header-brand .brand-sub { font-size:8px !important; letter-spacing:0.08em !important; }
+            #header-brand .brand-divider { display:none; }
+            #header-metrics { gap:12px !important; justify-content:center !important; text-align:center !important; }
+            .metric-val { font-size:16px; }
+
+            /* Main area: stack columns vertically */
+            #main-area { flex-direction:column !important; height:auto !important; overflow:visible !important; }
+
+            /* Left sidebar: full width */
+            #panel-controls { width:100% !important; height:auto !important; }
+
+            /* Center viewer: full width */
+            #panel-center { width:100% !important; min-width:0 !important; }
+
+            /* Tab bar: wrap buttons */
+            #tab-bar { height:auto !important; flex-wrap:wrap !important; padding:8px 12px !important; justify-content:center !important; gap:6px !important; }
+            .tab-btn { padding:5px 10px; font-size:9px; }
+            #tab-bar .live-indicator { margin-left:0 !important; width:100%; justify-content:center; margin-top:4px; }
+
+            /* View container: force height for 3D / charts */
+            #view-container { min-height:360px !important; height:360px !important; }
+
+            /* Nebula legend: shrink and wrap */
+            #nebula-legend { gap:8px !important; padding:5px 10px !important; flex-wrap:wrap; justify-content:center; }
+            #nebula-legend span { font-size:8px !important; letter-spacing:0.08em !important; }
+
+            /* Telemetry: full width, scrollable */
+            #panel-telemetry { width:100% !important; max-height:350px !important; overflow-y:auto !important; }
+
+            /* Mood + Skills: stack charts vertically */
+            #view-mood .chart-row { flex-direction:column !important; height:auto !important; }
+            #view-mood .chart-row > div { height:250px !important; }
+
+            /* Footer: stack vertically */
+            #app-footer { height:auto !important; padding:12px 16px !important; flex-direction:column !important; gap:8px !important; }
+            #footer-left, #footer-right { justify-content:center !important; width:100% !important; text-align:center !important; flex-wrap:wrap !important; gap:8px !important; }
+            #footer-right .mono { font-size:9px !important; }
+        }
+
+        /* Extra small phones */
+        @media (max-width: 480px) {
+            .metric-val { font-size:14px; }
+            #header-brand .brand-title { font-size:11px !important; }
+            #view-container { min-height:280px !important; height:280px !important; }
+            #panel-telemetry { max-height:300px !important; }
+            .tab-btn { padding:4px 8px; font-size:8px; }
         }
     </style>
 </head>
@@ -114,18 +134,17 @@
 
 <div class="ui">
     <!-- HEADER -->
-    <header class="glass" style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:68px;flex-shrink:0">
-        <div style="display:flex;align-items:center;gap:24px">
-            <!-- Icon-only logo to avoid long text -->
+    <header id="app-header" class="glass" style="display:flex;align-items:center;justify-content:space-between;padding:0 32px;height:68px;flex-shrink:0">
+        <div id="header-brand" style="display:flex;align-items:center;gap:24px">
             <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png"
                  alt="ACLAS" style="height:36px;width:36px;object-fit:contain;border-radius:6px">
-            <div style="width:1px;height:28px;background:rgba(255,255,255,0.08)"></div>
+            <div class="brand-divider" style="width:1px;height:28px;background:rgba(255,255,255,0.08)"></div>
             <div>
-                <div style="font-size:17px;font-weight:700;letter-spacing:0.35em;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent">ACLAS NEURO-EDU</div>
-                <div class="label" style="margin-top:2px;letter-spacing:0.3em">Cognitive Sovereign Protocol · v3.0.0</div>
+                <div class="brand-title" style="font-size:17px;font-weight:700;letter-spacing:0.35em;background:linear-gradient(135deg,var(--cyan),var(--purple));-webkit-background-clip:text;-webkit-text-fill-color:transparent">ACLAS NEURO-EDU</div>
+                <div class="brand-sub label" style="margin-top:2px;letter-spacing:0.3em">Cognitive Sovereign Protocol · v3.0.0</div>
             </div>
         </div>
-        <div style="display:flex;gap:40px;text-align:right" class="mono">
+        <div id="header-metrics" style="display:flex;gap:40px;text-align:right" class="mono">
             <div><div class="label">Tick</div><div class="metric-val" id="h-tick">0000</div></div>
             <div><div class="label">Class GPA</div><div class="metric-val" id="h-gpa" style="color:var(--green)">—</div></div>
             <div><div class="label">CAS Score</div><div class="metric-val" id="h-cas" style="color:var(--cyan)">—</div></div>
@@ -134,10 +153,10 @@
     </header>
 
     <!-- MAIN AREA -->
-    <div style="flex:1;display:flex;gap:14px;overflow:hidden;min-height:0">
+    <div id="main-area" style="flex:1;display:flex;gap:14px;overflow:hidden;min-height:0">
 
         <!-- LEFT: Controls -->
-        <div class="glass" style="width:280px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;padding:22px;overflow-y:auto">
+        <div id="panel-controls" class="glass" style="width:280px;flex-shrink:0;display:flex;flex-direction:column;gap:16px;padding:22px;overflow-y:auto">
             <div class="label" style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px">Control Terminal</div>
 
             <div style="display:flex;flex-direction:column;gap:6px">
@@ -175,27 +194,27 @@
         </div>
 
         <!-- CENTER: Tabbed viewer -->
-        <div style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0">
+        <div id="panel-center" style="flex:1;display:flex;flex-direction:column;gap:10px;min-width:0">
             <!-- Tab bar -->
-            <div class="glass" style="height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;flex-shrink:0">
+            <div id="tab-bar" class="glass" style="height:46px;display:flex;align-items:center;padding:0 16px;gap:4px;flex-shrink:0">
                 <button class="tab-btn active" data-tab="nebula">Neural Nebula</button>
                 <button class="tab-btn" data-tab="loss">Loss Curve</button>
                 <button class="tab-btn" data-tab="graph">Knowledge Graph</button>
                 <button class="tab-btn" data-tab="mood">Mood &amp; Skills</button>
-                <div style="margin-left:auto;display:flex;align-items:center;gap:8px">
+                <div class="live-indicator" style="margin-left:auto;display:flex;align-items:center;gap:8px">
                     <div class="pulse" style="background:var(--green)"></div>
                     <span class="label">LIVE</span>
                 </div>
             </div>
 
             <!-- View container -->
-            <div style="flex:1;position:relative;min-height:0">
+            <div id="view-container" style="flex:1;position:relative;min-height:0">
 
                 <!-- Nebula: 3D Three.js -->
                 <div id="view-nebula" style="position:absolute;inset:0;border-radius:20px;overflow:hidden">
                     <div id="agent-3d-container"></div>
                     <!-- Legend overlay -->
-                    <div style="position:absolute;top:18px;right:20px;display:flex;gap:20px;background:rgba(2,3,8,0.7);padding:8px 18px;border-radius:30px;border:1px solid rgba(255,255,255,0.1)">
+                    <div id="nebula-legend" style="position:absolute;top:18px;right:20px;display:flex;gap:20px;background:rgba(2,3,8,0.7);padding:8px 18px;border-radius:30px;border:1px solid rgba(255,255,255,0.1)">
                         <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--cyan);box-shadow:0 0 8px var(--cyan)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Excited</span></div>
                         <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--green);box-shadow:0 0 8px var(--green)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Focused</span></div>
                         <div style="display:flex;align-items:center;gap:6px"><div style="width:9px;height:9px;border-radius:50%;background:var(--red);box-shadow:0 0 8px var(--red)"></div><span style="font-size:10px;letter-spacing:0.15em;color:#aac;text-transform:uppercase">Confused</span></div>
@@ -218,7 +237,7 @@
                 <!-- Mood + Skills -->
                 <div id="view-mood" class="glass" style="position:absolute;inset:0;display:none;padding:24px">
                     <div class="label" style="margin-bottom:16px">Classroom Mood Distribution + Skill Radar</div>
-                    <div style="display:flex;gap:24px;height:calc(100% - 36px)">
+                    <div class="chart-row" style="display:flex;gap:24px;height:calc(100% - 36px)">
                         <div style="flex:1;position:relative"><canvas id="chart-mood"></canvas></div>
                         <div style="flex:1;position:relative"><canvas id="chart-skill"></canvas></div>
                     </div>
@@ -227,7 +246,7 @@
         </div>
 
         <!-- RIGHT: Telemetry -->
-        <div class="glass" style="width:310px;flex-shrink:0;display:flex;flex-direction:column;padding:20px;overflow:hidden">
+        <div id="panel-telemetry" class="glass" style="width:310px;flex-shrink:0;display:flex;flex-direction:column;padding:20px;overflow:hidden">
             <div class="label" style="border-bottom:1px solid rgba(255,255,255,0.05);padding-bottom:8px;margin-bottom:14px;display:flex;justify-content:space-between">
                 Cognitive Telemetry <span id="rp-count" class="mono" style="color:#6a7a90">AGENTS: 20</span>
             </div>
@@ -242,14 +261,14 @@
     </div>
 
     <!-- FOOTER -->
-    <footer style="flex-shrink:0;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 28px" class="glass">
-        <div style="display:flex;align-items:center;gap:14px">
+    <footer id="app-footer" style="flex-shrink:0;height:36px;display:flex;align-items:center;justify-content:space-between;padding:0 28px" class="glass">
+        <div id="footer-left" style="display:flex;align-items:center;gap:14px">
             <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png" alt="ACLAS" style="height:18px;width:18px;object-fit:contain;opacity:0.7">
             <span style="font-size:12px;color:#8090a8;font-weight:500">Atlanta College of Liberal Arts and Sciences</span>
             <span style="color:rgba(255,255,255,0.12)">·</span>
             <span style="font-size:11px;padding:2px 10px;border-radius:20px;background:rgba(0,242,255,0.07);border:1px solid rgba(0,242,255,0.15);color:#00f2ff;font-weight:600;letter-spacing:0.06em">Open Source</span>
         </div>
-        <div style="display:flex;align-items:center;gap:20px">
+        <div id="footer-right" style="display:flex;align-items:center;gap:20px">
             <span style="font-size:11px;color:#4a5a6a" class="mono">Neuro-Edu SDK v3.0.0 · MIT License</span>
             <a href="https://github.com/aclascollege/neuro-edu" target="_blank"
                style="display:flex;align-items:center;gap:7px;text-decoration:none;color:#8090a8;font-size:12px;font-weight:600;padding:4px 14px;border-radius:20px;border:1px solid rgba(255,255,255,0.1);background:rgba(255,255,255,0.03);transition:all 0.2s"
