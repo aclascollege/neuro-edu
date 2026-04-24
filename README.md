@@ -1,4 +1,3 @@
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19743807.svg)](https://doi.org/10.5281/zenodo.19743807)
 <div align="center">
 
 <img src="https://aclas.college/uploads/system/8b0b26b6b391297deb6e9b56768404f5.png" width="80" alt="ACLAS Logo" />
@@ -15,7 +14,7 @@
 
 ---
 
-
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19743807-blue.svg)](https://doi.org/10.5281/zenodo.19743807)
 [![License: MIT](https://img.shields.io/badge/License-MIT-cyan.svg)](https://opensource.org/licenses/MIT)
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
