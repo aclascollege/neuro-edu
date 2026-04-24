@@ -10,6 +10,8 @@
 
 ---
 
+[![DOI](https://img.shields.io/badge/DOI-10.5281%2Fzenodo.19743807-blue.svg)](https://doi.org/10.5281/zenodo.19743807)
+
 **[🚀 在線演示](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
 **[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
 **[🌐 官方網站](https://aclas.college)** &nbsp;|&nbsp;
