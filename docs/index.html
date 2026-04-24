@@ -88,11 +88,14 @@
             .glass[style*="width:280px"] { width:100% !important; flex-shrink:1 !important; height:auto !important; }
             
             /* Center Viewer */
-            .ui > div > div:nth-child(2) { width:100% !important; height:500px !important; }
+            .ui > div > div:nth-child(2) { width:100% !important; height:auto !important; display:block !important; }
             
             /* Tabs */
-            .ui > div > div:nth-child(2) > div.glass:first-child { flex-wrap:wrap; height:auto !important; padding:10px !important; justify-content:center; gap:8px; }
+            .ui > div > div:nth-child(2) > div.glass:first-child { flex-wrap:wrap; height:auto !important; padding:10px !important; justify-content:center; gap:8px; margin-bottom: 12px; }
             .tab-btn { padding:6px 10px; font-size:10px; }
+            
+            /* View Container (forces 3D canvas and charts to have height on mobile) */
+            .ui > div > div:nth-child(2) > div:nth-child(2) { height:400px !important; display:block !important; position:relative !important; }
             
             #view-mood div[style*="display:flex"] { flex-direction:column; height:auto !important; }
             #view-mood div[style*="flex:1"] { height:300px; }
