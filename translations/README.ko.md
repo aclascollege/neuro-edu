@@ -12,10 +12,11 @@
 
 **[🚀 온라인 데모](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
 **[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
-
-**[🌐 웹사이트](https://aclas.college)** &nbsp;|&nbsp;
+**[🌐 공식 홈페이지](https://aclas.college)** &nbsp;|&nbsp;
+**[🎓 MCS 프로그램](https://aclas.college/programs/mcs)** &nbsp;|&nbsp;
 **[📚 온라인 강의](https://aclas.college/home/courses)** &nbsp;|&nbsp;
-**[🎓 자격 인증](https://aclas.college/verify/certificate-verify)**
+**[🎓 전문 자격증](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
+**[💬 커뮤니티](https://aclas.college/admissions/alumni-network)**
 
 </div>
 

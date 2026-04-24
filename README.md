@@ -38,7 +38,8 @@
 **[🚀 Live Demo](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
 **[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
 **[📚 Courses](https://aclas.college/home/courses)** &nbsp;|&nbsp;
-**[🎓 Certifications](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
+**[🎓 MCS Program](https://aclas.college/programs/mcs)** &nbsp;|&nbsp;
+**[🏆 Certifications](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
 **[💬 Community](https://aclas.college/admissions/alumni-network)** &nbsp;|&nbsp;
 **[📄 Docs](#documentation)**
 
@@ -411,7 +412,7 @@ You are free to use, modify, and distribute this software for any purpose, inclu
 
 *Advancing human potential through AI-powered education*
 
-[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/home/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/verify/certificate-verify) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
+[🌐 aclas.college](https://aclas.college) &nbsp;·&nbsp; [🎓 MCS Program](https://aclas.college/programs/mcs) &nbsp;·&nbsp; [📚 Courses](https://aclas.college/home/courses) &nbsp;·&nbsp; [🏆 Certifications](https://aclas.college/verify/certificate-verify) &nbsp;·&nbsp; [🌍 Mission & Vision](https://aclas.college/explore/mission-and-vision) &nbsp;·&nbsp; [💬 Contact](https://aclas.college/home/contact-us)
 
 <sub>© 2026 Atlanta College of Liberal Arts and Sciences. Open-sourced under MIT License. &nbsp;·&nbsp; <a href="https://aclas.college/policy/terms-and-condition">Terms</a> &nbsp;·&nbsp; <a href="https://aclas.college/policy/privacy-policy">Privacy</a> &nbsp;·&nbsp; <a href="https://aclas.college/home/sitemap">Sitemap</a></sub>
 

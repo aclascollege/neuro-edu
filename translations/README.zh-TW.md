@@ -13,6 +13,7 @@
 **[🚀 在線演示](https://aclascollege.github.io/neuro-edu/)** &nbsp;|&nbsp;
 **[🤗 Hugging Face](https://huggingface.co/ACLASCollege/neuro-edu-core-v3)** &nbsp;|&nbsp;
 **[🌐 官方網站](https://aclas.college)** &nbsp;|&nbsp;
+**[🎓 MCS 課程](https://aclas.college/programs/mcs)** &nbsp;|&nbsp;
 **[📚 在線課程](https://aclas.college/home/courses)** &nbsp;|&nbsp;
 **[🎓 專業認證](https://aclas.college/verify/certificate-verify)** &nbsp;|&nbsp;
 **[💬 社群交流](https://aclas.college/admissions/alumni-network)**
