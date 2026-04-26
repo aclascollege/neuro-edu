@@ -169,7 +169,7 @@ graph TD
 
 ```
 aclas-neuro-edu/
-├── core/
+├── neuro_edu/             # Source code (PyPI namespace)
 │   ├── model.py          # TinyCognitionModel — NumPy MLP w/ real backprop
 │   ├── agent.py          # NeuralStudentAgent — LLM thought + skill matrix
 │   ├── engine.py         # UltimateClassroom — social learning bus + metrics
