@@ -28,5 +28,5 @@ payload = {
   "summary": "Force state change to docker"
 }
 
-with open('hf_docker_payload_correct.json', 'w', encoding='utf-8') as f:
+with open('REMOVED_TOKEN_payload_correct.json', 'w', encoding='utf-8') as f:
     json.dump(payload, f)

@@ -11,7 +11,7 @@ import os
 sys.path.insert(0, os.path.dirname(__file__))
 
 import argparse
-from core.engine import UltimateClassroom
+from neuro_edu.engine import UltimateClassroom
 
 
 def print_header():

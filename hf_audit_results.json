@@ -1,0 +1,38 @@
+{
+  "models": [
+    {
+      "id": "ACLASCollege/neuro-edu-core-v3",
+      "tags": [
+        "numpy",
+        "cognitive-science",
+        "education",
+        "multi-agent",
+        "neural-simulation",
+        "on-device",
+        "en",
+        "dataset:ACLAS/knowledge-base",
+        "license:mit",
+        "region:us"
+      ],
+      "has_readme": true,
+      "last_modified": null
+    },
+    {
+      "id": "ACLASCollege/aclas-neuro-edu-demo",
+      "tags": [
+        "region:us"
+      ],
+      "has_readme": false,
+      "last_modified": null
+    }
+  ],
+  "spaces": [
+    {
+      "id": "ACLASCollege/aclas-neuro-dashboard",
+      "sdk": "static",
+      "has_readme": true,
+      "last_modified": null
+    }
+  ],
+  "datasets": []
+}

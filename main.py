@@ -8,7 +8,7 @@ from pydantic import BaseModel
 from typing import Dict, Optional
 import uvicorn
 
-from core.engine import UltimateClassroom
+from neuro_edu.engine import UltimateClassroom
 
 app = FastAPI(
     title="ACLAS Neuro-Edu API",

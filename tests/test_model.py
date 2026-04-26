@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import numpy as np
-from core.model import TinyCognitionModel, NeuralLayer
+from neuro_edu.model import TinyCognitionModel, NeuralLayer
 
 
 class TestNeuralLayer:

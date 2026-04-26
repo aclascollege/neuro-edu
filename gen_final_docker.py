@@ -43,7 +43,7 @@ payload = {
   "summary": "Force transition to Docker SDK with proper entrypoint"
 }
 
-with open('hf_final_docker_payload.json', 'w', encoding='utf-8') as f:
+with open('REMOVED_TOKEN_docker_payload.json', 'w', encoding='utf-8') as f:
     json.dump(payload, f)
 
-print("Generated hf_final_docker_payload.json")
+print("Generated REMOVED_TOKEN_docker_payload.json")

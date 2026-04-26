@@ -4,7 +4,7 @@ import os
 sys.path.insert(0, os.path.join(os.path.dirname(__file__), ".."))
 
 import pytest
-from core.agent import NeuralStudentAgent
+from neuro_edu.agent import NeuralStudentAgent
 
 
 class TestNeuralStudentAgent:

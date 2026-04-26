@@ -4,7 +4,7 @@ build-backend = "setuptools.build_meta"
 
 [project]
 name = "aclas-neuro-edu"
-version = "0.3.0"
+version = "0.3.1"
 authors = [
   { name="Atlanta College of Liberal Arts and Sciences (ACLAS)", email="info@aclas.college" },
 ]
@@ -21,6 +21,12 @@ classifiers = [
 dependencies = [
     "numpy>=1.20.0",
 ]
+
+[project.scripts]
+neuro-edu = "cli:main"
+
+[tool.setuptools]
+packages = ["neuro_edu"]
 
 [project.urls]
 "Homepage" = "https://github.com/aclascollege/neuro-edu"
