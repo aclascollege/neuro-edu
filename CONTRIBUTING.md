@@ -44,6 +44,20 @@ We are always looking to push the boundaries of AI-driven education.
 
 ---
 
+## 🌍 Promote the Project
+
+Help us grow the ACLAS Neuro-Edu community! If you support our mission, you can help by submitting the SDK to curated **"Awesome"** lists on GitHub. 
+
+We recommend the following targets:
+- **Machine Learning**: [josephmisiti/awesome-machine-learning](https://github.com/josephmisiti/awesome-machine-learning)
+- **Neuroscience**: [brandonhimpfen/awesome-neuroscience](https://github.com/brandonhimpfen/awesome-neuroscience)
+- **Educational Tools**: [vahidk/Awesome-Educational-Tools](https://github.com/vahidk/Awesome-Educational-Tools)
+
+**Entry Suggestion:**
+> `* [ACLAS Neuro-Edu SDK](https://github.com/aclascollege/neuro-edu) - Autonomous cognitive simulation framework for AI-powered education, modeling human knowledge acquisition with neural kernels and thermodynamic entropy analysis.`
+
+---
+
 ## 🛠️ Development Setup
 
 To set up the ACLAS Neuro-Edu local development environment:

@@ -21,14 +21,18 @@ To build a fully autonomous, on-device cognitive simulation framework that democ
 ### **Q4 2026: Sandbox & Extensibility**
 - [ ] **Plugin API**: Enable third-party developers to create custom "Cognitive Environments".
 - [ ] **Curriculum Engine**: Automated lesson-plan-to-simulation generation pipeline.
-- [ ] **Hugging Face Hub Integration**: Direct weights upload/download within the SDK.
+- [x] **Hugging Face Hub Integration**: Direct weights upload/download within the SDK.
+- [ ] **Affective AI Prototype**: Initial implementation of emotional/motivational load tracking.
 
 ---
 
-## 🌌 2027: Decentralized Intelligence
+## 🌌 2027: Decentralized Intelligence & Affective Alignment
 
 - [ ] **P2P Knowledge Distillation**: Federated learning between local Neuro-Edu instances.
 - [ ] **Anti-Fragile University Protocol**: Real-time simulation of large-scale decentralized educational systems.
+- [ ] **Affective Alignment Protocol**: Optimizing pedagogical scaffolding for learner motivation and curiosity.
+- [ ] **Longitudinal Metacognitive Tracking**: Systems for monitoring skill acquisition over multi-month timescales.
+- [ ] **K-12 Pedagogical Calibration**: Specialized alignment profiles for primary and secondary education contexts.
 - [ ] **Physical Embodiment**: Drivers for integrating Neuro-Edu agents into localized robotics hardware.
 
 ---

@@ -1,0 +1,28 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "aclas-neuro-edu"
+version = "0.3.0"
+authors = [
+  { name="Atlanta College of Liberal Arts and Sciences (ACLAS)", email="info@aclas.college" },
+]
+description = "Autonomous cognitive simulation framework for AI-powered education."
+readme = "README.md"
+requires-python = ">=3.8"
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+    "Intended Audience :: Science/Research",
+    "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+    "numpy>=1.20.0",
+]
+
+[project.urls]
+"Homepage" = "https://github.com/aclascollege/neuro-edu"
+"Bug Tracker" = "https://github.com/aclascollege/neuro-edu/issues"
+"Documentation" = "https://aclascollege.github.io/neuro-edu/"

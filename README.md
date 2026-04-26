@@ -8,6 +8,8 @@
 
 **by [Atlanta College of Liberal Arts and Sciences (ACLAS)](https://aclas.college)**
 
+![ACLAS Neuro-Edu Social Preview](assets/social-preview.png)
+
 ---
 
 **[English](README.md)** | **[Français](translations/README.fr.md)** | **[Español](translations/README.es.md)** | **[Русский](translations/README.ru.md)** | **[Deutsch](translations/README.de.md)** | **[繁體中文](translations/README.zh-TW.md)** | **[日本語](translations/README.ja.md)** | **[한국어](translations/README.ko.md)**
@@ -52,6 +54,20 @@
 **ACLAS Neuro-Edu** is a research-grade, open-source multi-agent cognitive simulation framework developed by [Atlanta College of Liberal Arts and Sciences](https://aclas.college). It models the process of human knowledge acquisition using **on-device neural networks**, **vector-space semantics**, and **thermodynamic entropy analysis**.
 
 Now enhanced with **Hugging Face Hub integration**, the framework supports exporting cognitive model weights for collaborative research and federated evaluation.
+
+### 📐 Mathematical Foundation
+
+Neuro-Edu operationalizes cognitive science principles into computable alignment objectives.
+
+#### 1. Intrinsic Load Estimation (CLT)
+To manage working memory capacity, we estimate the intrinsic load $L_{intrinsic}$ of instructional content:
+$$L_{intrinsic} = \sum_{i=1}^{n} w_i \cdot F_i(x) + \epsilon$$
+where $F_i(x)$ represents lexical complexity, syntactic depth, and conceptual density.
+
+#### 2. Cognitive-Grounded Alignment Protocol (CGAP)
+We extend the standard RLHF objective to penalize cognitive misalignment:
+$$\mathcal{L}_{CGAP} = \mathbb{E}[r(x,y)] - \beta D_{KL}(\pi || \pi_{ref}) - \lambda_1 L_{load} - \lambda_2 L_{metacog}$$
+This ensures that the AI tutor optimizes for **learning effectiveness** rather than just perceived helpfulness.
 
 ### Why does this exist?
 
@@ -418,7 +434,22 @@ If you use this framework in your research, please cite:
 
 This project is licensed under the **MIT License** — see the [LICENSE](LICENSE) file for details.
 
-You are free to use, modify, and distribute this software for any purpose, including commercial applications, as long as the original copyright notice is included.
+You are free to use, modify, and distribute this software.
+
+## 🌍 Community & Support
+
+We are building the first **Anti-Fragile University** together. 
+
+### 🏆 Awesome Lists Support
+Help us increase visibility by submitting **Neuro-Edu** to curated lists! We are already preparing submissions for:
+- [ ] `awesome-machine-learning`
+- [ ] `awesome-neuroscience`
+- [ ] `awesome-education`
+
+See our [Contribution Guide](CONTRIBUTING.md#promote-the-project) for details on how to help.
+
+### 🏛️ About ACLAS College
+The **Atlanta College of Liberal Arts and Sciences (ACLAS)** is a leading institution dedicated to bridging the gap between classical liberal arts and cutting-edge artificial intelligence. 
 
 ---
 
