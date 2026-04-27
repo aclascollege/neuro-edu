@@ -3,7 +3,7 @@ import statistics
 import sys
 import os
 sys.path.append(os.getcwd())
-from core.engine import UltimateClassroom
+from neuro_edu.engine import UltimateClassroom
 
 def run_benchmark():
     print("Starting ACLAS Neuro-Edu Performance Benchmark...")
