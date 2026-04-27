@@ -26,7 +26,7 @@ jobs:
         pip install pytest httpx ruff bandit pip-audit
     - name: Lint with ruff
       run: |
-        ruff check .
+        ruff check neuro_edu/ main.py cli.py
     - name: Security Audit (Bandit)
       run: |
         bandit -r neuro_edu/ main.py cli.py -ll

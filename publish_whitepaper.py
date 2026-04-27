@@ -1,5 +1,4 @@
 import requests
-import json
 
 api_key = "MCJzWCZDpiJTgi8EmYiwh1D1"
 url = "https://dev.to/api/articles"

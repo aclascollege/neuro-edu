@@ -1,5 +1,4 @@
 import os
-import re
 
 def add_doi_badge():
     doi_badge = '[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.19743807.svg)](https://doi.org/10.5281/zenodo.19743807)\n'

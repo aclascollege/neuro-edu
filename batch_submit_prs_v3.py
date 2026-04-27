@@ -1,5 +1,4 @@
 import requests
-import json
 import time
 import base64
 import os
@@ -20,7 +19,7 @@ def submit_to_list(owner, repo, marker, entry, section_name):
     print(f"\n>>> Processing {owner}/{repo} ({section_name})")
     
     # 1. Fork
-    print(f"Forking...")
+    print("Forking...")
     fork_resp = requests.post(f"https://api.github.com/repos/{owner}/{repo}/forks", headers=headers)
     if fork_resp.status_code not in [200, 202]:
         print(f"Fork failed: {fork_resp.status_code}")
@@ -31,7 +30,7 @@ def submit_to_list(owner, repo, marker, entry, section_name):
     # 2. Get README
     readme_resp = requests.get(f"https://api.github.com/repos/{my_user}/{repo}/contents/README.md", headers=headers)
     if readme_resp.status_code != 200:
-        print(f"Failed to get README from fork.")
+        print("Failed to get README from fork.")
         return
 
     readme_data = readme_resp.json()

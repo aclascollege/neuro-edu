@@ -1,5 +1,4 @@
 import requests
-import json
 
 token = "3VFnBuzq5UZPgAkJ4ZFr5EDA0tMk6AayeE3Ln8iuZIA"
 url = "https://api.producthunt.com/v2/api/graphql"
@@ -49,7 +48,7 @@ if response.status_code == 200:
         if res['errors']:
             print(f"Launch failed: {res['errors'][0]['message']}")
         else:
-            print(f"🚀 SUCCESS! ACLAS Neuro-Edu has been launched on Product Hunt!")
+            print("🚀 SUCCESS! ACLAS Neuro-Edu has been launched on Product Hunt!")
             print(f"URL: {res['post']['url']}")
     else:
         print(f"Unexpected response: {data}")
