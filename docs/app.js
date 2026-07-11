@@ -481,10 +481,8 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
 
 // Init sequence
 initCharts();
+init3D();
 loadArchInfo();
-updateUI().then(() => {
-    // Delay 3D init slightly to ensure container is laid out
-    setTimeout(init3D, 100);
-});
+updateUI();
 
 setInterval(updateUI, 7000);
