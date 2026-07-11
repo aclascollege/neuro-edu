@@ -6,6 +6,7 @@ UltimateClassroom Engine v3
 """
 import json
 import random
+import pkgutil
 from pathlib import Path
 from typing import List, Dict
 
@@ -44,11 +45,18 @@ class UltimateClassroom:
 
     def _load_dataset(self):
         try:
-            with open(DATA_PATH, "r", encoding="utf-8") as f:
-                raw = json.load(f)
-                self._dataset = raw.get("training_samples", [])
+            bundled = pkgutil.get_data("neuro_edu", "data/knowledge_base.json")
+            if bundled is None:
+                raise FileNotFoundError("Bundled knowledge_base.json not found")
+            raw = json.loads(bundled.decode("utf-8"))
+            self._dataset = raw.get("training_samples", [])
         except Exception:
-            self._dataset = []
+            try:
+                with open(DATA_PATH, "r", encoding="utf-8") as f:
+                    raw = json.load(f)
+                    self._dataset = raw.get("training_samples", [])
+            except Exception:
+                self._dataset = []
 
     def setup(self, count: int = 20):
         self.agents = []
@@ -115,6 +123,8 @@ class UltimateClassroom:
         """
         if not self._dataset:
             return {"error": "No dataset loaded", "loss": []}
+        if not self.agents:
+            return {"error": "No agents configured", "loss": []}
 
         epoch_losses = []
         for epoch in range(epochs):

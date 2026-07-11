@@ -1,7 +1,10 @@
 import requests
 import json
+import os
 
-api_key = "MCJzWCZDpiJTgi8EmYiwh1D1"
+api_key = os.getenv("DEVTO_API_KEY")
+if not api_key:
+    raise RuntimeError("Set DEVTO_API_KEY before running this script.")
 url = "https://dev.to/api/comments"
 
 payload = {

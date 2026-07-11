@@ -1,6 +1,5 @@
 import requests
 
-api_key = "MCJzWCZDpiJTgi8EmYiwh1D1"
 url = "https://dev.to/api/articles/aclas_college/deep-dive-the-cognitive-science-behind-the-aclas-neuro-edu-sdk-179c"
 
 response = requests.get(url)

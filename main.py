@@ -4,7 +4,7 @@ All endpoints are real: they hit live agent MLPs, real training loops, and live 
 """
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 from typing import Dict, Optional
 import uvicorn
 
@@ -23,12 +23,12 @@ classroom.setup(20)
 # --- Request Models ---
 class InstructionReq(BaseModel):
     text: str
-    complexity: float = 0.5
+    complexity: float = Field(0.5, ge=0.0, le=1.0)
     skills_req: Optional[Dict[str, float]] = None
 
 
 class SetupReq(BaseModel):
-    agent_count: int = 20
+    agent_count: int = Field(20, ge=1, le=200)
 
 
 # --- Endpoints ---

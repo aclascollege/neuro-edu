@@ -212,7 +212,7 @@ pip install -r requirements.txt
 python main.py
 ```
 
-Open **http://localhost:8000** in your browser.
+Open **http://localhost:7860** in your browser.
 
 ---
 

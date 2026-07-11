@@ -1,6 +1,9 @@
 import requests
+import os
 
-token = "3VFnBuzq5UZPgAkJ4ZFr5EDA0tMk6AayeE3Ln8iuZIA"
+token = os.getenv("PRODUCTHUNT_TOKEN")
+if not token:
+    raise RuntimeError("Set PRODUCTHUNT_TOKEN before running this script.")
 url = "https://api.producthunt.com/v2/api/graphql"
 
 headers = {

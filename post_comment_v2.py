@@ -1,6 +1,9 @@
 import requests
+import os
 
-api_key = "MCJzWCZDpiJTgi8EmYiwh1D1"
+api_key = os.getenv("DEVTO_API_KEY")
+if not api_key:
+    raise RuntimeError("Set DEVTO_API_KEY before running this script.")
 url = "https://dev.to/api/comments"
 
 msg = "Hi DEV Community! 👋 We are **ACLAS College**, an institution dedicated to democratizing elite education through AI. We just joined and published our first post about our open-source **Neuro-Edu SDK** — a 3D cognitive simulation framework built with Python. We're excited to be here, learn from this amazing community, and share our journey in building an anti-fragile university. Looking forward to connecting with all the researchers, educators, and developers here! 🏛️🧠"
