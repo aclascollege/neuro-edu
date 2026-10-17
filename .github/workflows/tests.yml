@@ -23,7 +23,7 @@ jobs:
       run: |
         python -m pip install --upgrade pip
         pip install -r requirements.txt
-        pip install pytest httpx ruff bandit pip-audit
+        pip install pytest httpx "ruff==0.17.1" bandit pip-audit
     - name: Lint with ruff
       run: |
         ruff check neuro_edu/ main.py cli.py
@@ -32,7 +32,7 @@ jobs:
         bandit -r neuro_edu/ main.py cli.py -ll
     - name: Dependency Audit (pip-audit)
       run: |
-        pip-audit -r requirements.txt --local || true
+        pip-audit -r requirements.txt --local
     - name: Test with pytest (including API)
       run: |
         pytest tests/ -v

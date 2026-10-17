@@ -2,11 +2,12 @@
 ACLAS Neuro-Edu — FastAPI Application
 All endpoints are real: they hit live agent MLPs, real training loops, and live metrics.
 """
+from __future__ import annotations
+
+import uvicorn
 from fastapi import FastAPI, HTTPException
 from fastapi.staticfiles import StaticFiles
 from pydantic import BaseModel, Field
-from typing import Dict, Optional
-import uvicorn
 
 from neuro_edu.engine import UltimateClassroom
 
@@ -24,7 +25,7 @@ classroom.setup(20)
 class InstructionReq(BaseModel):
     text: str
     complexity: float = Field(0.5, ge=0.0, le=1.0)
-    skills_req: Optional[Dict[str, float]] = None
+    skills_req: dict[str, float] | None = None
 
 
 class SetupReq(BaseModel):
@@ -100,8 +101,9 @@ async def knowledge_graph():
 
 
 @app.post("/api/reset")
-async def reset(req: SetupReq = SetupReq()):
+async def reset(req: SetupReq | None = None):
     """Reset the simulation environment."""
+    req = req or SetupReq()
     classroom.setup(req.agent_count)
     return {"status": "reset", "agents": req.agent_count}
 

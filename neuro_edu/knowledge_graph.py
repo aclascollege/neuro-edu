@@ -3,7 +3,9 @@ Lightweight knowledge graph builder.
 Tracks concept nodes and their relations as agents learn.
 Exports a D3.js-compatible JSON format for live visualization.
 """
-from typing import Dict, List, Any
+from __future__ import annotations
+
+from typing import Any
 
 
 class KnowledgeGraph:
@@ -13,8 +15,8 @@ class KnowledgeGraph:
     """
 
     def __init__(self):
-        self.nodes: Dict[str, Dict] = {}
-        self.edges: List[Dict] = []
+        self.nodes: dict[str, dict] = {}
+        self.edges: list[dict] = []
         self._edge_set: set = set()
 
     def add_concept(self, concept: str, category: str, strength: float = 1.0):
@@ -49,7 +51,7 @@ class KnowledgeGraph:
                 "weight": round(weight, 3),
             })
 
-    def build_from_agents(self, agents: List) -> Dict:
+    def build_from_agents(self, agents: list) -> dict:
         self.nodes = {}
         self.edges = []
         self._edge_set = set()
@@ -64,7 +66,7 @@ class KnowledgeGraph:
                                       getattr(agent, "last_prob", 0.5))
         return self.export()
 
-    def export(self) -> Dict[str, Any]:
+    def export(self) -> dict[str, Any]:
         return {
             "nodes": list(self.nodes.values()),
             "edges": self.edges,

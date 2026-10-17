@@ -2,9 +2,9 @@
 Five-dimensional skill matrix for cognitive agent profiling.
 Dimensions: Logic, Math, Language, Memory, Creative
 """
-import numpy as np
-from typing import Dict
+from __future__ import annotations
 
+import numpy as np
 
 SKILL_DIMS = ["logic", "math", "language", "memory", "creative"]
 
@@ -22,13 +22,13 @@ class SkillMatrix:
     def __init__(self, profile: str = "balanced"):
         base = PROFILES.get(profile, PROFILES["balanced"]).copy()
         # Add small individual variation
-        self.skills: Dict[str, float] = {
+        self.skills: dict[str, float] = {
             k: round(float(np.clip(v + np.random.normal(0, 0.05), 0.05, 1.0)), 3)
             for k, v in base.items()
         }
         self.profile = profile
 
-    def match_content(self, content_skills: Dict[str, float]) -> float:
+    def match_content(self, content_skills: dict[str, float]) -> float:
         """
         Compute weighted skill-match score between content requirements and agent profile.
         Returns value in [0, 1].
@@ -46,7 +46,7 @@ class SkillMatrix:
     def dominant_skill(self) -> str:
         return max(self.skills, key=self.skills.get)
 
-    def to_dict(self) -> Dict[str, float]:
+    def to_dict(self) -> dict[str, float]:
         return self.skills.copy()
 
     def to_vector(self) -> np.ndarray:

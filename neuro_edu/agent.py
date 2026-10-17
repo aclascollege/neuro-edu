@@ -4,13 +4,18 @@ NeuralStudentAgent v3
 - LLM-powered internal monologue via Ollama (with rich template fallback)
 - Participates in message bus for social learning
 """
-import numpy as np
+from __future__ import annotations
+
+import logging
 import random
+
 import httpx
-from typing import List, Dict, Optional
+import numpy as np
 
 from .model import TinyCognitionModel
 from .skills import SkillMatrix
+
+logger = logging.getLogger(__name__)
 
 # Ollama config — graceful fallback if not running
 OLLAMA_URL = "http://localhost:11434/api/generate"
@@ -18,7 +23,7 @@ OLLAMA_MODEL = "qwen2:0.5b"
 OLLAMA_TIMEOUT = 2.0  # seconds — keep it fast
 
 # Rich thought templates (used when Ollama is unavailable)
-THOUGHT_BANK: Dict[str, List[str]] = {
+THOUGHT_BANK: dict[str, list[str]] = {
     "Excited": [
         "Neural resonance at {prob:.0%}. Concept '{topic}' anchored to {skill} schema. Long-term encoding initiated.",
         "High-confidence absorption ({prob:.0%}). Semantic bridge formed. Prior knowledge activated.",
@@ -54,7 +59,7 @@ def _sample_thought(mood: str, **kwargs) -> str:
         return tmpl
 
 
-async def _llm_thought(mood: str, topic: str, agent_name: str) -> Optional[str]:
+async def _llm_thought(mood: str, topic: str, agent_name: str) -> str | None:
     """Call local Ollama for a genuine LLM-generated internal monologue."""
     prompt = (
         f"You are a student named {agent_name}. "
@@ -73,8 +78,8 @@ async def _llm_thought(mood: str, topic: str, agent_name: str) -> Optional[str]:
             })
             if resp.status_code == 200:
                 return resp.json().get("response", "").strip()
-    except Exception:
-        pass
+    except (httpx.HTTPError, OSError, ValueError) as exc:
+        logger.debug("Ollama thought generation failed, using template fallback: %s", exc)
     return None
 
 
@@ -101,8 +106,8 @@ class NeuralStudentAgent:
         self.prior_knowledge: float = round(random.uniform(0.1, 0.5), 3)
 
         # Memory
-        self.knowledge_pool: List[str] = []
-        self.message_inbox: List[Dict] = []  # messages from other agents
+        self.knowledge_pool: list[str] = []
+        self.message_inbox: list[dict] = []  # messages from other agents
 
         # Persistent state
         self.current_mood: str = "Neutral"
@@ -112,7 +117,7 @@ class NeuralStudentAgent:
     def _build_features(self, complexity: float, skill_match: float) -> np.ndarray:
         return np.array([[complexity, self.attention, skill_match, self.fatigue, self.prior_knowledge]])
 
-    def process_sync(self, instruction_text: str, complexity: float, skills_req: Dict[str, float]) -> Dict:
+    def process_sync(self, instruction_text: str, complexity: float, skills_req: dict[str, float]) -> dict:
         """Synchronous process — runs the MLP and updates state."""
         topic = instruction_text[:30] if instruction_text else "unknown"
         skill_match = self.skill_matrix.match_content(skills_req)
@@ -158,11 +163,11 @@ class NeuralStudentAgent:
 
         return self._serialize()
 
-    def receive_message(self, msg: Dict):
+    def receive_message(self, msg: dict):
         """Receive a knowledge cascade message from another agent."""
         self.message_inbox.append(msg)
 
-    def _serialize(self) -> Dict:
+    def _serialize(self) -> dict:
         return {
             "id": self.id,
             "name": self.name,

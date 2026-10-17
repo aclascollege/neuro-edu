@@ -21,7 +21,7 @@
 [![Python](https://img.shields.io/badge/Python-3.10%2B-blue.svg)](https://www.python.org/)
 [![FastAPI](https://img.shields.io/badge/FastAPI-0.100%2B-009688.svg)](https://fastapi.tiangolo.com/)
 [![NumPy](https://img.shields.io/badge/NumPy-Powered-013243.svg)](https://numpy.org/)
-[![Tests](https://img.shields.io/badge/Tests-26%20passed-brightgreen.svg)](#testing)
+[![Tests](https://img.shields.io/badge/Tests-31%20passed-brightgreen.svg)](#testing)
 [![Open Source](https://img.shields.io/badge/Open%20Source-%E2%9D%A4-ff69b4.svg)](https://github.com/aclascollege/neuro-edu)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/aclascollege/neuro-edu/pulls)
 

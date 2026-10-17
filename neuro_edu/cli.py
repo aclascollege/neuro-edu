@@ -1,6 +1,7 @@
 """ACLAS Neuro-Edu CLI."""
 
 import argparse
+
 from neuro_edu.engine import UltimateClassroom
 
 

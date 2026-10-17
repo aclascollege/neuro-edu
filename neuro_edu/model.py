@@ -3,8 +3,9 @@ ACLAS Tiny-Cognition (ATC) v2
 Pure NumPy multi-layer perceptron with full backpropagation.
 This is the on-device neural kernel powering every student agent.
 """
+from __future__ import annotations
+
 import numpy as np
-from typing import List, Dict
 
 
 class NeuralLayer:
@@ -44,15 +45,15 @@ class TinyCognitionModel:
     Output: absorption_probability ∈ (0, 1)
     """
 
-    def __init__(self, input_dim: int = 5, hidden_dims: List[int] = None):
+    def __init__(self, input_dim: int = 5, hidden_dims: list[int] | None = None):
         if hidden_dims is None:
             hidden_dims = [16, 8]
         dims = [input_dim] + hidden_dims + [1]
         self.layers = [NeuralLayer(dims[i], dims[i + 1]) for i in range(len(dims) - 1)]
         self.lr = 0.005
-        self.loss_history: List[float] = []
-        self._pre_activations: List[np.ndarray] = []
-        self._activations: List[np.ndarray] = []
+        self.loss_history: list[float] = []
+        self._pre_activations: list[np.ndarray] = []
+        self._activations: list[np.ndarray] = []
 
     # --- Activations ---
     @staticmethod
@@ -113,7 +114,7 @@ class TinyCognitionModel:
 
         return loss
 
-    def batch_train(self, dataset: List[Dict]) -> float:
+    def batch_train(self, dataset: list[dict]) -> float:
         """Train on a list of {'input': [...], 'expected_absorption': float} samples."""
         if not dataset:
             return 0.0
@@ -129,10 +130,10 @@ class TinyCognitionModel:
         """Mean absolute weight of layer 0 — represents 'brain activity level'."""
         return float(np.mean(np.abs(self.layers[0].weights)))
 
-    def get_loss_curve(self, last_n: int = 50) -> List[float]:
+    def get_loss_curve(self, last_n: int = 50) -> list[float]:
         return [round(v, 6) for v in self.loss_history[-last_n:]]
 
-    def get_architecture_summary(self) -> Dict:
+    def get_architecture_summary(self) -> dict:
         dims = [layer.weights.shape[0] for layer in self.layers] + [self.layers[-1].weights.shape[1]]
         return {
             "architecture": dims,

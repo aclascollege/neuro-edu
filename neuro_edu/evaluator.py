@@ -2,8 +2,11 @@
 Multi-dimensional cognitive performance evaluator.
 Produces GPA, CAS Score, Retention Rate, Diversity Index, and Dropout Risk.
 """
+from __future__ import annotations
+
+from typing import Any
+
 import numpy as np
-from typing import List, Dict, Any
 
 
 class CognitiveEvaluator:
@@ -13,7 +16,7 @@ class CognitiveEvaluator:
     """
 
     @staticmethod
-    def compute_gpa(agents: List) -> float:
+    def compute_gpa(agents: list) -> float:
         """
         GPA on a 4.0 scale.
         Weighted: knowledge_pool depth (50%) + attention stability (30%) + prior_knowledge (20%)
@@ -28,7 +31,7 @@ class CognitiveEvaluator:
         return round(float(np.mean(scores)) * 4.0, 2)
 
     @staticmethod
-    def compute_cas(agents: List) -> float:
+    def compute_cas(agents: list) -> float:
         """
         Cognitive Absorption Score (CAS) — ACLAS proprietary metric.
         CAS = Σ (absorption_prob_i × attention_i) / n
@@ -40,7 +43,7 @@ class CognitiveEvaluator:
         return round(float(np.mean(vals)), 4)
 
     @staticmethod
-    def compute_retention_rate(agents: List) -> float:
+    def compute_retention_rate(agents: list) -> float:
         """% of agents actively retaining (have indexed ≥1 concept and are not Confused)."""
         if not agents:
             return 0.0
@@ -51,7 +54,7 @@ class CognitiveEvaluator:
         return round(retaining / len(agents), 3)
 
     @staticmethod
-    def compute_diversity_index(agents: List) -> float:
+    def compute_diversity_index(agents: list) -> float:
         """
         Shannon entropy of mood distribution.
         Higher = more cognitively diverse class (some excel, some struggle).
@@ -69,7 +72,7 @@ class CognitiveEvaluator:
         return round(float(entropy), 4)
 
     @staticmethod
-    def compute_dropout_risk(agents: List) -> List[Dict]:
+    def compute_dropout_risk(agents: list) -> list[dict]:
         """
         Dropout Risk Score = (1-attention)×0.5 + fatigue×0.3 + (1-prior_knowledge)×0.2
         Returns agents with risk > 0.55, sorted descending.
@@ -82,7 +85,7 @@ class CognitiveEvaluator:
         return sorted(at_risk, key=lambda x: -x["risk"])
 
     @staticmethod
-    def compute_skill_distribution(agents: List) -> Dict[str, float]:
+    def compute_skill_distribution(agents: list) -> dict[str, float]:
         """Average skill levels across the class per dimension."""
         if not agents:
             return {}
@@ -94,12 +97,12 @@ class CognitiveEvaluator:
         return result
 
     @staticmethod
-    def compute_mood_distribution(agents: List) -> Dict[str, int]:
+    def compute_mood_distribution(agents: list) -> dict[str, int]:
         moods = ["Excited", "Focused", "Confused", "Neutral"]
         return {m: sum(1 for a in agents if a.current_mood == m) for m in moods}
 
     @classmethod
-    def full_report(cls, agents: List, tick: int, loss_curve: List[float]) -> Dict[str, Any]:
+    def full_report(cls, agents: list, tick: int, loss_curve: list[float]) -> dict[str, Any]:
         return {
             "tick": tick,
             "gpa": cls.compute_gpa(agents),

@@ -6,11 +6,13 @@ Usage:
     python cli.py report
     python cli.py reset
 """
-import sys
 import os
+import sys
+
 sys.path.insert(0, os.path.dirname(__file__))
 
 import argparse
+
 from neuro_edu.engine import UltimateClassroom
 
 

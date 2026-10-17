@@ -4,11 +4,13 @@ UltimateClassroom Engine v3
 - Aggregate loss curve from all agent brains
 - Integrated CognitiveEvaluator for full metric reporting
 """
+from __future__ import annotations
+
 import json
-import random
+import logging
 import pkgutil
+import random
 from pathlib import Path
-from typing import List, Dict
 
 from .agent import NeuralStudentAgent
 from .evaluator import CognitiveEvaluator
@@ -20,6 +22,8 @@ NAMES = [
     "Iris", "Jinx", "Kira", "Lumen", "Mira", "Nova", "Onyx", "Plex",
     "Quinn", "Rho", "Seren", "Talon", "Uma", "Vex", "Wren", "Xen", "Yael", "Zeno",
 ]
+
+logger = logging.getLogger(__name__)
 
 DATA_PATH = Path(__file__).parent.parent / "data" / "knowledge_base.json"
 
@@ -35,12 +39,12 @@ class UltimateClassroom:
     """
 
     def __init__(self):
-        self.agents: List[NeuralStudentAgent] = []
+        self.agents: list[NeuralStudentAgent] = []
         self.tick: int = 0
-        self.global_loss_history: List[float] = []
+        self.global_loss_history: list[float] = []
         self.evaluator = CognitiveEvaluator()
         self.knowledge_graph = KnowledgeGraph()
-        self._dataset: List[Dict] = []
+        self._dataset: list[dict] = []
         self._load_dataset()
 
     def _load_dataset(self):
@@ -50,12 +54,14 @@ class UltimateClassroom:
                 raise FileNotFoundError("Bundled knowledge_base.json not found")
             raw = json.loads(bundled.decode("utf-8"))
             self._dataset = raw.get("training_samples", [])
-        except Exception:
+        except (OSError, ValueError) as exc:
+            logger.warning("Bundled knowledge base unavailable (%s); trying %s", exc, DATA_PATH)
             try:
                 with open(DATA_PATH, "r", encoding="utf-8") as f:
                     raw = json.load(f)
                     self._dataset = raw.get("training_samples", [])
-            except Exception:
+            except (OSError, ValueError) as exc2:
+                logger.warning("Knowledge base unavailable (%s); continuing with empty dataset", exc2)
                 self._dataset = []
 
     def setup(self, count: int = 20):
@@ -69,7 +75,7 @@ class UltimateClassroom:
             name = NAMES[i % len(NAMES)]
             self.agents.append(NeuralStudentAgent(str(i), name, profile))
 
-    def broadcast(self, instruction: str, complexity: float, skills_req: Dict[str, float]) -> Dict:
+    def broadcast(self, instruction: str, complexity: float, skills_req: dict[str, float]) -> dict:
         """
         Single teaching step:
         1. All agents process the instruction via their MLP
@@ -116,7 +122,7 @@ class UltimateClassroom:
             "cascade_events": len(excited),
         }
 
-    def run_training(self, epochs: int = 3) -> Dict:
+    def run_training(self, epochs: int = 3) -> dict:
         """
         Federated training: each agent trains its own MLP on the shared dataset.
         Returns aggregated loss curve.
@@ -143,11 +149,11 @@ class UltimateClassroom:
             "final_loss": epoch_losses[-1] if epoch_losses else None,
         }
 
-    def get_metrics(self) -> Dict:
+    def get_metrics(self) -> dict:
         combined_loss = []
         for a in self.agents:
             combined_loss.extend(a.brain.get_loss_curve(20))
         return self.evaluator.full_report(self.agents, self.tick, self.global_loss_history[-50:])
 
-    def get_graph(self) -> Dict:
+    def get_graph(self) -> dict:
         return self.knowledge_graph.export()
