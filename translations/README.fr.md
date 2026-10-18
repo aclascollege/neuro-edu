@@ -100,6 +100,5 @@ Ce projet est sous licence **MIT**.
 [![LinkedIn](https://img.shields.io/badge/LinkedIn-ACLAS-0077B5?style=flat-square&logo=linkedin)](https://www.linkedin.com/school/aclascollege)
 [![Facebook](https://img.shields.io/badge/Facebook-ACLAS-1877F2?style=flat-square&logo=facebook)](https://www.facebook.com/aclascollege)
 [![Instagram](https://img.shields.io/badge/Instagram-ACLAS-E4405F?style=flat-square&logo=instagram)](https://www.instagram.com/aclascollege)
-[![YouTube](https://img.shields.io/badge/YouTube-ACLAS-FF0000?style=flat-square&logo=youtube)](https://www.youtube.com/@aclascollege)
 [![Hugging Face](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-ACLAS-yellow?style=flat-square)](https://huggingface.co/ACLASCollege)
 [![X](https://img.shields.io/badge/X-ACLAS-000000?style=flat-square&logo=x&logoColor=white)](https://x.com/aclascollege)
