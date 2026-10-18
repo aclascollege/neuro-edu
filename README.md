@@ -400,7 +400,7 @@ In 2026, as AI reshapes every layer of society, [ACLAS](https://aclas.college) i
 | 🎓 Academic Programs | [aclas.college/programs](https://aclas.college/home/courses) |
 | 📰 Research & News | [aclas.college/news](https://aclas.college/blogs) |
 | 💼 Careers | [aclas.college/careers](https://aclas.college/admissions/careers) |
-| 📩 Contact | [aclas.college/contact](https://aclas.college/home/contact-us) |
+| 📩 Contact | [aclas.college](https://aclas.college) |
 
 ### 📱 Follow ACLAS
 
